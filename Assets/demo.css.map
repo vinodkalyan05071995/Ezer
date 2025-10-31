@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/scss/demo.scss"],
+  "sourcesContent": [".demo {\n    background-color: red;\n    .demo--child {\n        background-color: blue;\n    }\n}"],
+  "mappings": ";AAAA,CAAA;AACI,oBAAA;;AACA,CAFJ,KAEI,CAAA;AACI,oBAAA;;",
+  "names": []
+}

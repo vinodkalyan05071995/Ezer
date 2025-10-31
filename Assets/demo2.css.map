@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/scss/demo2.scss"],
+  "sourcesContent": [".demo2 {\n    color: green;\n}"],
+  "mappings": ";AAAA,CAAA;AACI,SAAA;;",
+  "names": []
+}

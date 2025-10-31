@@ -1,0 +1,144 @@
+.clr-black {
+    color: var(--color-black) !important;
+}
+
+.clr-white {
+    color: var(--color-white);
+}
+
+.clr-gray {
+    color: var(--color-gray);
+}
+
+.fnt-bold {
+    font-weight: 800 !important;
+}
+
+.fnt-medium {
+    font-weight: 500;
+}
+
+.fnt-regular {
+    font-weight: 400;
+}
+
+.link {
+    color: var(--color-link);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 9px 16px;
+    font-size: 13px;
+    line-height: 18px;
+    border-radius: 25px;
+    text-align: center;
+    letter-spacing: 3.8px;
+    font-family: "Inter", sans-serif;
+
+    &--border {
+        border: 1px solid white;
+        color: white;
+
+        &:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-black);
+            border-color: var(--color-black);
+        }
+    }
+
+}
+
+
+
+.btn-fill {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-black) !important;
+
+
+    &:hover {
+        background-color: transparent !important;
+        color: var(--color-secondary);
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+        padding-block: 16px !important;
+    }
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.content-side {
+    margin-left: 45px;
+
+    @media (min-width: 768px) {
+        margin-left: 260px;
+    }
+}
+
+.box-shadow {
+    box-shadow: 0 8px 30px rgba(31, 90, 133, 0.48);
+}
+
+.font-poppins {
+    font-family: "Poppins", sans-serif !important;
+}
+
+.font-poppins-bold {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+}
+
+.font-poppins-medium {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 500 !important;
+}
+
+.font-poppins-regular {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.font-18 {
+    font-size: 18px;
+    line-height: 150%;
+
+}
+
+.font-12 {
+    font-size: 12px !important;
+    line-height: 130% !important;
+}
+
+.font-14 {
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.font-16 {
+    font-size: 16px !important;
+    line-height: 24px !important;
+}
+
+.font-40 {
+    font-size: 40px;
+    line-height: 56px;
+}
+
+.clr-primary {
+    color: var(--color-primary);
+}
