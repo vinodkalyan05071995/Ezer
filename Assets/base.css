@@ -741,5 +741,63 @@ header {
   width: 100%;
   border-radius: 25px;
 }
+.blogs {
+  margin-top: 120px;
+}
+.blogs_title {
+  font-size: 139px;
+  font-weight: 700;
+  color: #e7e7e7;
+  line-height: 167px;
+  margin-bottom: 8px;
+}
+.blogs_btn {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+.blogs_btn .btn {
+  color: #000;
+  border: 2px solid black;
+}
+.blogs_btn .btn:hover {
+  background-color: black;
+  color: white;
+}
+.blogs_wrapper {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.blogs_cards {
+  width: calc(33.3333333333% - 24px);
+  border-radius: 25px;
+}
+.blogs_cards-content {
+  margin-top: 24px;
+}
+.blogs_cards-date {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #777;
+}
+.blogs_cards-heading {
+  font-size: 26px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  margin-top: 24px;
+  line-height: 31px;
+}
+.blogs_cards-description {
+  color: #777;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29px;
+}
+.blogs_cards-image img {
+  width: 100%;
+  border-radius: 25px;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /*# sourceMappingURL=base.css.map */
