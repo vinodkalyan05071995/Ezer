@@ -1,0 +1,22 @@
+.stats {
+    padding-block: 30px;
+
+    &_card {
+        max-width: 250px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &_card-image {
+        position: relative;
+    }
+
+    &_card-percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: 700;
+    }
+}

@@ -1,15 +1,6 @@
 .blogs {
 
-    margin-top: 120px;
-
-    &_title {
-        font-size: 139px;
-        font-weight: 700;
-        color: #e7e7e7;
-        line-height: 167px;
-        margin-bottom: 8px;
-
-    }
+    padding-block: 30px;
 
     &_btn {
         margin-top: 24px;
@@ -27,15 +18,9 @@
         }
     }
 
-    &_wrapper {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-
-    }
+    &_wrapper {}
 
     &_cards {
-        width: calc(100% /3 - 24px);
         border-radius: 25px;
 
         &-content {

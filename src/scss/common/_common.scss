@@ -50,6 +50,16 @@
         }
     }
 
+    &--border-reverse {
+        border: 1px solid var(--color-black);
+        color: var(--color-black);
+
+        &:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-black);
+        }
+    }
+
 }
 
 
@@ -141,4 +151,21 @@
 
 .clr-primary {
     color: var(--color-primary);
+}
+
+.heading-fnt {
+    font-size: 139px;
+    font-weight: 700;
+    color: #e7e7e7;
+    line-height: 167px;
+    margin-bottom: 8px;
+
+    @media (max-width: 767px) {
+        font-size: 48px;
+        line-height: 64px;
+    }
+}
+
+.contact {
+    padding-block: 30px;
 }

@@ -1,5 +1,6 @@
 .dealers {
-    padding-block: 60px;
+    padding-top: 60px;
+    padding-bottom: 30px;
 
     &_title {
         font-size: 139px;
@@ -11,14 +12,13 @@
     }
 
     &_wrapper {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
+        // display: flex;
+        // gap: 24px;
+        // flex-wrap: wrap;
 
     }
 
     &_cards {
-        width: calc((100% - 72px) / 4); // 3 gaps of 24px between 4 cards
         border-radius: 25px;
 
         &-heading {
