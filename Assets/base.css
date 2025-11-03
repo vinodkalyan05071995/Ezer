@@ -265,7 +265,7 @@ header {
 }
 .header {
   background-color: var(--color-white);
-  padding-block: 16px;
+  padding-block: 0px;
   position: fixed;
   top: 0;
   left: 0;
@@ -620,6 +620,12 @@ header {
 .btn--border-reverse:hover {
   background-color: var(--color-secondary);
   color: var(--color-black);
+}
+.btn--outline svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--outline:hover svg {
+  transform: translateY(-4px) scale(1.1) rotate(-8deg);
 }
 .btn-fill {
   background-color: var(--color-secondary) !important;

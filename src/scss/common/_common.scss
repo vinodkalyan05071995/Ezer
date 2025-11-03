@@ -47,7 +47,10 @@
             background-color: var(--color-secondary);
             color: var(--color-black);
             border-color: var(--color-black);
+
+
         }
+
     }
 
     &--border-reverse {
@@ -63,6 +66,18 @@
 }
 
 
+.btn--outline {
+    svg {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover {
+        svg {
+            transform: translateY(-4px) scale(1.1) rotate(-8deg);
+        }
+    }
+}
+
 
 .btn-fill {
     background-color: var(--color-secondary) !important;
@@ -72,6 +87,8 @@
     &:hover {
         background-color: transparent !important;
         color: var(--color-secondary);
+
+
     }
 
     @media (max-width: 767px) {
