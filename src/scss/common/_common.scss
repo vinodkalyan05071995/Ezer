@@ -209,3 +209,31 @@
 .sp-t {
     padding-top: 60px;
 }
+
+.form-control {
+    color: var(--color-gray);
+    letter-spacing: 3.8px;
+    font-size: 14px;
+    line-height: 29px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    font-family: "Geist", sans-serif;
+    text-decoration: none;
+    position: relative;
+}
+
+input:placeholder {
+    color: var(--color-gray);
+    letter-spacing: 3.8px;
+    font-size: 14px;
+    line-height: 29px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    font-family: "Geist", sans-serif;
+    text-decoration: none;
+    position: relative;
+
+
+}
