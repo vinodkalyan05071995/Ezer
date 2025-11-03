@@ -1,0 +1,48 @@
+.banner_image {
+    display: grid;
+
+
+    &__container,
+    &__overlay {
+        grid-area: 1 / 1;
+    }
+
+    &__overlay {
+        position: relative;
+        z-index: 1;
+    }
+
+    .image-banner {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 500px;
+    }
+}
+
+.features {
+    &__item {
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(31, 90, 133, 0.48);
+        padding: 24px;
+        text-align: center;
+        height: 100%;
+    }
+
+    &__item-title {
+        font-size: 24px;
+        line-height: 32px;
+        color: var(--color-black);
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    &__item-description {
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--color-gray);
+        margin-bottom: 12px;
+        font-weight: 400;
+    }
+}

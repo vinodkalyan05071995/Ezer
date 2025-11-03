@@ -18,13 +18,16 @@
         }
     }
 
-    &_wrapper {}
 
     &_cards {
         border-radius: 25px;
+        text-decoration: none;
+        color: var(--color-black);
+        display: block;
 
         &-content {
             margin-top: 24px;
+            padding: 16px 24px;
         }
 
         &-date {
@@ -51,10 +54,21 @@
         }
 
         &-image {
+            width: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
 
             img {
                 width: 100%;
-                border-radius: 25px;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
             }
         }
     }

@@ -9,6 +9,92 @@ var App = (() => {
       } else {
         header.classList.add("header--transparent");
       }
+      const chartCanvas = document.getElementById("insightsDoughnutChart");
+      let chartInstance = null;
+      if (chartCanvas) {
+        const drawChart = () => {
+          if (chartInstance) return;
+          const ctx = chartCanvas.getContext("2d");
+          chartInstance = new Chart(ctx, {
+            type: "doughnut",
+            data: {
+              labels: [
+                "All Other Queries",
+                "New Car Inquiry",
+                "Used Cars Inquiry",
+                "Bookings",
+                "Service and Parts",
+                "Finance and Lease"
+              ],
+              datasets: [{
+                data: [12.02, 40, 20, 19, 9, 0.98],
+                backgroundColor: [
+                  "#FFA726",
+                  // All Other Queries (orange)
+                  "#66BB6A",
+                  // New Car Inquiry (green)
+                  "#29B6F6",
+                  // Used Cars Inquiry (blue)
+                  "#AB47BC",
+                  // Bookings (purple)
+                  "#FF7043",
+                  // Service and Parts (red-orange)
+                  "#EC407A"
+                  // Finance and Lease (pink)
+                ],
+                borderWidth: 2,
+                borderColor: "#1c1c1c"
+              }]
+            },
+            options: {
+              responsive: false,
+              plugins: {
+                legend: {
+                  display: true,
+                  position: "bottom",
+                  labels: {
+                    color: "#111"
+                  }
+                },
+                tooltip: {
+                  enabled: true,
+                  callbacks: {
+                    label: function(context) {
+                      const label = context.label || "";
+                      const value = context.parsed || 0;
+                      return `${label}: ${value}%`;
+                    }
+                  }
+                },
+                datalabels: {
+                  color: "#fff",
+                  font: {
+                    weight: "bold",
+                    size: 16
+                  },
+                  formatter: function(value, context) {
+                    return value.toFixed(1) + "%";
+                  }
+                }
+              },
+              cutout: "50%"
+            },
+            plugins: [ChartDataLabels]
+          });
+        };
+        const observer = new window.IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                drawChart();
+                obs.disconnect();
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(chartCanvas);
+      }
     });
     const contactForm = document.getElementById("contact-form");
     const formMessage = document.getElementById("form-message");
@@ -43,6 +129,17 @@ var App = (() => {
         });
       });
     }
+    const btn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", function() {
+      if (window.scrollY > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    });
+    btn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   });
 })();
 //# sourceMappingURL=base.js.map
