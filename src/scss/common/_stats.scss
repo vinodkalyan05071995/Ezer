@@ -12,11 +12,15 @@
     }
 
     &_card-percentage {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
+        // position: absolute;
+        font-family: "Geist", sans-serif;
+        font-size: 52px;
+        line-height: 48px;
         font-weight: 700;
+        margin-block: 32px;
+        display: block;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
     }
 }

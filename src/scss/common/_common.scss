@@ -237,3 +237,39 @@ input:placeholder {
 
 
 }
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    .dropdown-btn-icon {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+        .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-btn-icon {
+            transform: rotate(180deg);
+
+        }
+    }
+}
+
+.map-iframe {
+    height: 500px;
+
+    @media (max-width: 767px) {
+        height: 300px;
+    }
+}

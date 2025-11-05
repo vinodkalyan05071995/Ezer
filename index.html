@@ -15,6 +15,7 @@
             rel="stylesheet"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="Assets/base.css">
 
     </head>
@@ -38,8 +39,76 @@
                                 class="m-0 p-0 menu-list d-lg-flex justify-content-lg-end align-items-lg-center">
                                 <li class="m-0 p-0"><a href="/chatbot.html"
                                         class="menu-link link">Chatbot</a></li>
-                                <li class="m-0 p-0"><a href="/reach.html"
-                                        class="menu-link link">Reach</a></li>
+                                <li class="m-0 p-0 dropdown">
+                                    <button
+                                        class="dropdown-btn btn-transparent menu-link link d-flex align-items-center"
+                                        type="button"
+                                        id="reachDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Solutions <span
+                                            class="dropdown-btn-icon ms-1 d-flex align-items-center">
+                                            <svg width="14" height="12"
+                                                viewBox="0 0 14 12"
+                                                style="vertical-align:middle;"
+                                                xmlns="http://www.w3.org/2000/svg"><polyline
+                                                    points="2,4 7,9 12,4"
+                                                    fill="none" stroke="white"
+                                                    stroke-width="1.5" /></svg>
+                                        </span>
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu reach-dropdown-menu"
+                                        aria-labelledby="reachDropdown">
+                                        <li><a class="dropdown-item"
+                                                href="/reach/used-cars.html">DMS
+                                                Setup & Implementation </a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/reach/rental-cars.html">Ongoing
+                                                Maintenance & Support </a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/reach/jewellery.html">CRM
+                                                & Marketing Integrations
+                                                Reporting</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/reach/jewellery.html">RevOps
+                                                Strategy </a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/reach/jewellery.html">Training
+                                                & Onboarding </a></li>
+                                    </ul>
+                                </li>
+                                <li class="m-0 p-0 dropdown">
+                                    <button
+                                        class="dropdown-btn btn-transparent menu-link link d-flex align-items-center"
+                                        type="button"
+                                        id="reachDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Reach <span
+                                            class="dropdown-btn-icon ms-1 d-flex align-items-center">
+                                            <svg width="14" height="12"
+                                                viewBox="0 0 14 12"
+                                                style="vertical-align:middle;"
+                                                xmlns="http://www.w3.org/2000/svg"><polyline
+                                                    points="2,4 7,9 12,4"
+                                                    fill="none" stroke="white"
+                                                    stroke-width="1.5" /></svg>
+                                        </span>
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu reach-dropdown-menu"
+                                        aria-labelledby="reachDropdown">
+                                        <li><a class="dropdown-item"
+                                                href="/reach/used-cars.html"> F
+                                                & B</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/reach/rental-cars.html">Used
+                                                & Rental Cars</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/reach/jewellery.html">Jewellery</a></li>
+                                    </ul>
+                                </li>
                                 <li class="m-0 p-0"><a href="/insights.html"
                                         class="menu-link link">Insight</a></li>
                                 <li class="m-0 p-0"><a href="/pricing.html"
@@ -58,36 +127,48 @@
             </div>
         </header>
         <section class="banner">
+            <div class="banner_background">
+                <img src="img/banner-1.png" alt="Banner">
+            </div>
             <div class="container">
                 <div class="banner_container">
-                    <div class="row">
-                        <div class="col-12 col-lg-7">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12 col-lg-9">
                             <div class="banner__content">
                                 <h1 class="banner_title">
-                                    <div class="banner_header fnt-bold">
-                                        Multi-Agent AI for Car Dealerships
+                                    <div class="banner_header fnt-bold"
+                                        data-aos="fade-up">
+                                        RevOps that moves Dealers
+                                        forward
                                     </div>
                                 </h1>
-                                <p class="banner_description inter-font ">
-                                    Beyond single AI, our MAGS (Multi-Agent
-                                    Generative
-                                    System) empowers you
-                                    to own customized AI agents that are
-                                    uniquely yours.
+                                <p class="banner_description inter-font "
+                                    data-aos="fade-up">
+                                    We help used car dealerships run smarter by
+                                    setting up and managing Dealer Management
+                                    Systems (DMS). With Azer, your back office
+                                    runs smoother so your sales team can focus
+                                    on closing deals.
                                 </p>
-                                <div class="banner_buttons inter-font ">
-                                    <a href="#" class="btn btn--border">BOOK A
+                                <div
+                                    class="banner_buttons inter-font d-flex justify-content-center">
+                                    <a href="#" class="btn btn--border"
+                                        data-aos="fade-up">BOOK A
                                         DEMO</a>
-                                    <a href="#" class="btn btn--border">TRY THE
+                                    <a href="#" class="btn btn--border"
+                                        data-aos="fade-up"
+                                        data-aos-delay="50">TRY THE
                                         CHATBOT</a>
                                     <a href="#"
-                                        class="btn btn--border">EXPERIENCE REACH
+                                        class="btn btn--border"
+                                        data-aos="fade-up"
+                                        data-aos-delay="100">EXPERIENCE REACH
                                     </a>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-12 col-lg-5">
+                        <!-- <div class="col-12 col-lg-3">
                             <div class="chat">
                                 <div class="chat__inner">
 
@@ -159,7 +240,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -344,7 +425,7 @@
                     <div class="col-12 col-lg-3">
                         <div class="stats_card">
                             <div class="stats_card-image">
-                                <svg class="circle-chart"
+                                <!-- <svg class="circle-chart"
                                     viewBox="0 0 33.83098862 33.83098862"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle stroke="#808080" stroke-width=".5"
@@ -356,8 +437,9 @@
                                         stroke-dasharray="45,100" fill="none"
                                         cx="16.91549431" cy="16.91549431"
                                         r="15.91549431"></circle>
-                                </svg>
-                                <span class="stats_card-percentage">45%</span>
+                                </svg> -->
+                                <span class="stats_card-percentage"
+                                    data-target="45">0%</span>
                             </div>
                             <div class="stats_card-content">
                                 <h3 class="stats_card-heading mt-3">Visitors
@@ -369,7 +451,7 @@
                     <div class="col-12 col-lg-3">
                         <div class="stats_card">
                             <div class="stats_card-image">
-                                <svg class="circle-chart"
+                                <!-- <svg class="circle-chart"
                                     viewBox="0 0 33.83098862 33.83098862"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle stroke="#808080" stroke-width=".5"
@@ -381,8 +463,9 @@
                                         stroke-dasharray="71,100" fill="none"
                                         cx="16.91549431" cy="16.91549431"
                                         r="15.91549431"></circle>
-                                </svg>
-                                <span class="stats_card-percentage">71%</span>
+                                </svg> -->
+                                <span class="stats_card-percentage"
+                                    data-target="71">0%</span>
                             </div>
                             <div class="stats_card-content">
                                 <h3 class="stats_card-heading mt-3">Percentage
@@ -393,7 +476,7 @@
                     <div class="col-12 col-lg-3">
                         <div class="stats_card">
                             <div class="stats_card-image">
-                                <svg class="circle-chart"
+                                <!-- <svg class="circle-chart"
                                     viewBox="0 0 33.83098862 33.83098862"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle stroke="#808080" stroke-width=".5"
@@ -405,8 +488,9 @@
                                         stroke-dasharray="83,100" fill="none"
                                         cx="16.91549431" cy="16.91549431"
                                         r="15.91549431"></circle>
-                                </svg>
-                                <span class="stats_card-percentage">83%</span>
+                                </svg> -->
+                                <span class="stats_card-percentage"
+                                    data-target="83">0%</span>
                             </div>
                             <div class="stats_card-content">
                                 <h3 class="stats_card-heading mt-3">All
@@ -417,7 +501,7 @@
                     <div class="col-12 col-lg-3">
                         <div class="stats_card">
                             <div class="stats_card-image">
-                                <svg class="circle-chart"
+                                <!-- <svg class="circle-chart"
                                     viewBox="0 0 33.83098862 33.83098862"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle stroke="#808080" stroke-width=".5"
@@ -429,8 +513,9 @@
                                         stroke-dasharray="40,100" fill="none"
                                         cx="16.91549431" cy="16.91549431"
                                         r="15.91549431"></circle>
-                                </svg>
-                                <span class="stats_card-percentage">40%</span>
+                                </svg> -->
+                                <span class="stats_card-percentage"
+                                    data-target="40">0%</span>
                             </div>
                             <div class="stats_card-content">
                                 <h3 class="stats_card-heading mt-3">Increase in
@@ -595,6 +680,10 @@
 
         </section>
         <section class="contact">
+            <div class="map">
+                <iframe class="map-iframe w-100 "
+                    src="https://maps.google.com/maps?q=53.3381768,-6.2613077&z=15&output=embed"></iframe>
+            </div>
             <div class="container">
                 <h2 class="heading-fnt"> Say hi </h2>
                 <div class="row justify-content-center">
@@ -684,6 +773,7 @@
             crossorigin="anonymous"></script>
         <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="Assets/base.js"></script>
     </body>
 

@@ -25,9 +25,21 @@ header {
             background-color: var(--color-white) !important;
         }
 
+        .dropdown-btn-icon {
+            polyline {
+                stroke: var(--color-white) !important;
+            }
+        }
+
         // .menu-link:hover {
         //     color: var(--color-black);
         // }
+    }
+
+    .dropdown-btn-icon {
+        polyline {
+            stroke: var(--color-black);
+        }
     }
 
     .navbar-brand {

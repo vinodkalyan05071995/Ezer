@@ -140,6 +140,43 @@ var App = (() => {
     btn.addEventListener("click", function() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+    const statsCards = document.querySelectorAll(".stats_card-percentage");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            const target = parseInt(card.getAttribute("data-target"), 10);
+            if (isNaN(target)) return;
+            let current = 0;
+            const duration = 1800;
+            const frameRate = 16;
+            const totalFrames = Math.ceil(duration / frameRate);
+            const increment = target / totalFrames;
+            card.textContent = "0%";
+            const animate = () => {
+              current += increment;
+              if (current >= target) {
+                card.textContent = `${target}%`;
+              } else {
+                card.textContent = `${Math.floor(current)}%`;
+                requestAnimationFrame(animate);
+              }
+            };
+            animate();
+            obs.unobserve(card);
+          }
+        });
+      }, { threshold: 0.3 });
+      statsCards.forEach((card) => {
+        if (card.hasAttribute("data-target")) {
+          observer.observe(card);
+        }
+      });
+    }
+    AOS.init({
+      duration: 1200
+    });
   });
 })();
 //# sourceMappingURL=base.js.map
