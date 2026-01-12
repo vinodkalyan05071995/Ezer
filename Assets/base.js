@@ -1,2 +1,158 @@
-var App=(()=>{window.addEventListener("DOMContentLoaded",function(){window.addEventListener("scroll",function(){var o=document.querySelector("header");if(!o)return;window.scrollY>0?o.classList.remove("header--transparent"):o.classList.add("header--transparent");let s=document.getElementById("insightsDoughnutChart"),a=null;if(s){let i=()=>{if(a)return;let c=s.getContext("2d");a=new Chart(c,{type:"doughnut",data:{labels:["All Other Queries","New Car Inquiry","Used Cars Inquiry","Bookings","Service and Parts","Finance and Lease"],datasets:[{data:[12.02,40,20,19,9,.98],backgroundColor:["#FFA726","#66BB6A","#29B6F6","#AB47BC","#FF7043","#EC407A"],borderWidth:2,borderColor:"#1c1c1c"}]},options:{responsive:!1,plugins:{legend:{display:!0,position:"bottom",labels:{color:"#111"}},tooltip:{enabled:!0,callbacks:{label:function(n){let r=n.label||"",m=n.parsed||0;return`${r}: ${m}%`}}},datalabels:{color:"#fff",font:{weight:"bold",size:16},formatter:function(n,r){return n.toFixed(1)+"%"}}},cutout:"50%"},plugins:[ChartDataLabels]})};new window.IntersectionObserver((c,n)=>{c.forEach(r=>{r.isIntersecting&&(i(),n.disconnect())})},{threshold:.3}).observe(s)}});let d=document.getElementById("contact-form"),e=document.getElementById("form-message"),t=document.getElementById("submit-btn");d&&typeof emailjs<"u"&&(emailjs.init("X3FblCXeZ8HtDbEQ8"),document.getElementById("contact-form").addEventListener("submit",function(o){o.preventDefault(),t.disabled=!0,t.textContent="Sending...",e.style.display="none",emailjs.sendForm("service_bhil0bh","template_7w2nm24",this).then(()=>{e.style.display="block",e.style.backgroundColor="#d4edda",e.style.color="#155724",e.style.border="1px solid #c3e6cb",e.textContent="Thank you! Your message has been sent successfully.",d.reset(),t.disabled=!1,t.textContent="Submit"},i=>{e.style.display="block",e.style.backgroundColor="#f8d7da",e.style.color="#721c24",e.style.border="1px solid #f5c6cb",e.textContent="Sorry, there was an error sending your message. Please try again.",t.disabled=!1,t.textContent="Submit",alert(JSON.stringify(i))})}));let l=document.getElementById("scrollToTopBtn");window.addEventListener("scroll",function(){window.scrollY>200?l.style.display="block":l.style.display="none"}),l.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})}),AOS.init();var u=new Swiper(".swiper-containe1",{effect:"fade"}),b=new Swiper(".swiper-containe2",{spaceBetween:20,navigation:{nextEl:".swiper-button-next-testimonials",prevEl:".swiper-button-prev-testimonials"}});u.controller.control=b,b.controller.control=u});})();
+var App = (() => {
+  // src/js/common/index.js
+  window.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("scroll", function() {
+      var header = document.querySelector("header");
+      if (!header) return;
+      if (window.scrollY > 0) {
+        header.classList.remove("header--transparent");
+      } else {
+        header.classList.add("header--transparent");
+      }
+      const chartCanvas = document.getElementById("insightsDoughnutChart");
+      let chartInstance = null;
+      if (chartCanvas) {
+        const drawChart = () => {
+          if (chartInstance) return;
+          const ctx = chartCanvas.getContext("2d");
+          chartInstance = new Chart(ctx, {
+            type: "doughnut",
+            data: {
+              labels: [
+                "All Other Queries",
+                "New Car Inquiry",
+                "Used Cars Inquiry",
+                "Bookings",
+                "Service and Parts",
+                "Finance and Lease"
+              ],
+              datasets: [{
+                data: [12.02, 40, 20, 19, 9, 0.98],
+                backgroundColor: [
+                  "#FFA726",
+                  // All Other Queries (orange)
+                  "#66BB6A",
+                  // New Car Inquiry (green)
+                  "#29B6F6",
+                  // Used Cars Inquiry (blue)
+                  "#AB47BC",
+                  // Bookings (purple)
+                  "#FF7043",
+                  // Service and Parts (red-orange)
+                  "#EC407A"
+                  // Finance and Lease (pink)
+                ],
+                borderWidth: 2,
+                borderColor: "#1c1c1c"
+              }]
+            },
+            options: {
+              responsive: false,
+              plugins: {
+                legend: {
+                  display: true,
+                  position: "bottom",
+                  labels: {
+                    color: "#111"
+                  }
+                },
+                tooltip: {
+                  enabled: true,
+                  callbacks: {
+                    label: function(context) {
+                      const label = context.label || "";
+                      const value = context.parsed || 0;
+                      return `${label}: ${value}%`;
+                    }
+                  }
+                },
+                datalabels: {
+                  color: "#fff",
+                  font: {
+                    weight: "bold",
+                    size: 16
+                  },
+                  formatter: function(value, context) {
+                    return value.toFixed(1) + "%";
+                  }
+                }
+              },
+              cutout: "50%"
+            },
+            plugins: [ChartDataLabels]
+          });
+        };
+        const observer = new window.IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                drawChart();
+                obs.disconnect();
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(chartCanvas);
+      }
+    });
+    const contactForm = document.getElementById("contact-form");
+    const formMessage = document.getElementById("form-message");
+    const submitBtn = document.getElementById("submit-btn");
+    if (contactForm && typeof emailjs !== "undefined") {
+      emailjs.init("X3FblCXeZ8HtDbEQ8");
+      document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+        formMessage.style.display = "none";
+        const serviceID = "service_bhil0bh";
+        const templateID = "template_7w2nm24";
+        emailjs.sendForm(serviceID, templateID, this).then(() => {
+          formMessage.style.display = "block";
+          formMessage.style.backgroundColor = "#d4edda";
+          formMessage.style.color = "#155724";
+          formMessage.style.border = "1px solid #c3e6cb";
+          formMessage.textContent = "Thank you! Your message has been sent successfully.";
+          contactForm.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit";
+        }, (err) => {
+          formMessage.style.display = "block";
+          formMessage.style.backgroundColor = "#f8d7da";
+          formMessage.style.color = "#721c24";
+          formMessage.style.border = "1px solid #f5c6cb";
+          formMessage.textContent = "Sorry, there was an error sending your message. Please try again.";
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit";
+          alert(JSON.stringify(err));
+        });
+      });
+    }
+    const btn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", function() {
+      if (window.scrollY > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    });
+    btn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    AOS.init();
+    var quoteSwiper = new Swiper(".swiper-containe1", {
+      effect: "fade"
+    });
+    var imageSwiper = new Swiper(".swiper-containe2", {
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".swiper-button-next-testimonials",
+        prevEl: ".swiper-button-prev-testimonials"
+      }
+    });
+    quoteSwiper.controller.control = imageSwiper;
+    imageSwiper.controller.control = quoteSwiper;
+  });
+})();
 //# sourceMappingURL=base.js.map
