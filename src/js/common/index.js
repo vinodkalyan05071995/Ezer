@@ -161,50 +161,22 @@ window.addEventListener('DOMContentLoaded', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  const statsCards = document.querySelectorAll('.stats_card-percentage');
-  // Animate stat percentages only when cards enter the viewport (on intersection)
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const card = entry.target;
-          const target = parseInt(card.getAttribute('data-target'), 10);
-          if (isNaN(target)) return; // Skip if no target
+  AOS.init();
 
-          let current = 0;
-          // Slower the counter: increase duration (e.g. 2000ms for slow, or even 4000ms if you want)
-          const duration = 1800; // 1.8 seconds (change this to 3-5s for even slower)
-          const frameRate = 16;
-          const totalFrames = Math.ceil(duration / frameRate);
-          const increment = target / totalFrames;
-          card.textContent = "0%";
+  var quoteSwiper = new Swiper('.swiper-containe1', {
+    effect: 'fade',
+  });
+  var imageSwiper = new Swiper('.swiper-containe2', {
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next-testimonials',
+      prevEl: '.swiper-button-prev-testimonials',
+    },
+  });
+  quoteSwiper.controller.control = imageSwiper;
+  imageSwiper.controller.control = quoteSwiper;
 
-          const animate = () => {
-            current += increment;
-            if (current >= target) {
-              card.textContent = `${target}%`;
-            } else {
-              card.textContent = `${Math.floor(current)}%`;
-              requestAnimationFrame(animate);
-            }
-          };
-          animate();
 
-          obs.unobserve(card); // Animate only once
-        }
-      });
-    }, { threshold: 0.3 });
-
-    statsCards.forEach(card => {
-      if (card.hasAttribute('data-target')) {
-        observer.observe(card);
-      }
-    });
-  }
-
-  AOS.init({
-    duration: 1200,
-  })
 });
 
 

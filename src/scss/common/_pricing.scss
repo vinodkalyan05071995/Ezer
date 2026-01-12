@@ -1,6 +1,12 @@
 .pricing {
     padding-block: 60px;
     background-color: var(--color-light-gray);
+    margin-top: 60px;
+
+    &-card-wrapper {
+        position: relative;
+        height: 100%;
+    }
 
     &-card-radio {
         visibility: hidden;
@@ -12,52 +18,69 @@
         opacity: 0;
         z-index: -1;
 
-        &:checked {
-            &+.pricing-card {
-                box-shadow: 0 8px 30px rgb(31 90 133 / 48%);
-                background-color: var(--color-black);
-                color: var(--color-white);
-            }
-        }
+        // &:checked {
+        //     &+.pricing-card {
+        //         box-shadow: 0 8px 30px rgb(31 90 133 / 48%);
+        //         background-color: var(--color-black);
+        //         color: var(--color-white);
+        //     }
+        // }
     }
 
     &-card {
         background-color: var(--color-white);
-        padding: 24px;
+        padding: 24px 24px 24px 40px;
         height: 100%;
         border-radius: 12px;
         box-shadow: 0 8px 30px rgb(31 90 133 / 22%);
         transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
 
-        input:checked+&,
-        &:hover,
-        &.active {
-            box-shadow: 0 8px 30px rgb(31 90 133 / 48%);
-            background-color: var(--color-black);
-            color: var(--color-white);
+        // input:checked+&,
+        // &:hover,
+        // &.active {
+        //     box-shadow: 0 8px 30px rgb(31 90 133 / 48%);
+        //     background-color: var(--color-black);
+        //     color: var(--color-white);
 
-            .pricing-card-title {
-                color: var(--color-white);
-            }
+        //     .pricing-card-title {
+        //         color: var(--color-white);
+        //     }
 
-            .pricing-card-price {
-                color: var(--color-white);
-            }
+        //     .pricing-card-price {
+        //         color: var(--color-white);
+        //     }
 
-            .pricing-card-feature {
-                color: var(--color-white);
-            }
-        }
+        //     .pricing-card-feature {
+        //         color: var(--color-white);
+        //     }
+        // }
     }
 
     &-card-title {
-        font-family: "Geist", sans-serif;
+        font-family: var(--font-heading);
         font-size: 24px;
         line-height: 32px;
         font-weight: 700;
         color: var(--color-black);
-        text-align: center;
+        padding: 12px 18px;
+        border-radius: 30px 0 0 30px;
         margin-bottom: 24px;
+        background: linear-gradient(275deg, var(--secondary-color) 0%, #fff5b0 100%);
+        position: absolute;
+        top: 0;
+        right: -24px;
+
+        &--blue {
+            background: linear-gradient(275deg, #4169e1 0%, #27408b 100%);
+            color: var(--color-white);
+        }
+
+        &--royal-blue {
+            background: linear-gradient(275deg, #ffb347 0%, #ff5c8a 100%);
+            color: var(--color-white);
+        }
 
     }
 
@@ -65,20 +88,17 @@
         font-size: 16px;
         line-height: 24px;
         color: var(--color-black);
-        font-family: "Geist", sans-serif;
-        text-align: center;
+        font-family: var(--font-heading);
         font-weight: 600;
-        margin: 12px;
-        padding: 8px;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(31, 90, 133, 0.48);
+        margin-bottom: 24px;
     }
 
     &-card-features {
+        flex: 1;
         list-style: none;
         padding: 0;
         margin: 0;
-        text-align: center;
+
         margin-bottom: 8px;
     }
 

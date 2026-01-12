@@ -13,28 +13,28 @@ header {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
 
-    &--transparent {
-        background-color: transparent;
+    // &--transparent {
+    //     background-color: transparent;
 
-        .navbar-brand,
-        .menu-link {
-            color: var(--color-white) !important;
-        }
+    //     .navbar-brand,
+    //     .menu-link {
+    //         color: var(--color-white) !important;
+    //     }
 
-        .menu-link::after {
-            background-color: var(--color-white) !important;
-        }
+    //     .menu-link::after {
+    //         background-color: var(--color-white) !important;
+    //     }
 
-        .dropdown-btn-icon {
-            polyline {
-                stroke: var(--color-white) !important;
-            }
-        }
+    //     .dropdown-btn-icon {
+    //         polyline {
+    //             stroke: var(--color-white) !important;
+    //         }
+    //     }
 
-        // .menu-link:hover {
-        //     color: var(--color-black);
-        // }
-    }
+    //     // .menu-link:hover {
+    //     //     color: var(--color-black);
+    //     // }
+    // }
 
     .dropdown-btn-icon {
         polyline {

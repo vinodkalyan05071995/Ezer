@@ -10,7 +10,9 @@ import { sassPlugin } from 'esbuild-sass-plugin';
     'src/**/sections/*.scss'
   ];
 
-  let ctx = await esbuild.context({
+  const isBuild = process.argv.includes('--build');
+
+  const buildOptions = {
     entryPoints,
     bundle: true,
     sourcemap: true,
@@ -20,7 +22,7 @@ import { sassPlugin } from 'esbuild-sass-plugin';
     outdir: 'Assets',
     format: 'iife', // Immediately Invoked Function Expression for non-modular
     globalName: 'App', // Global namespace for the bundled code
-    minify: false, // Set to true for production
+    minify: isBuild, // Minify for production builds
     plugins: [sassPlugin()],
     loader: {
       '.js': 'js',
@@ -33,9 +35,17 @@ import { sassPlugin } from 'esbuild-sass-plugin';
     },
     target: 'es2020',
     logLevel: 'info'
-  });
+  };
 
-  await ctx.watch();
-  console.log("👀 Watching for changes...");
-  console.log('✅ Build completed successfully!');
+  if (isBuild) {
+    // Production build - one time build
+    await esbuild.build(buildOptions);
+    console.log('✅ Production build completed successfully!');
+  } else {
+    // Development mode - watch for changes
+    let ctx = await esbuild.context(buildOptions);
+    await ctx.watch();
+    console.log("👀 Watching for changes...");
+    console.log('✅ Build completed successfully!');
+  }
 })();

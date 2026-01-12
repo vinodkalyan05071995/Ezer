@@ -13,7 +13,7 @@
 
     &_card-percentage {
         // position: absolute;
-        font-family: "Geist", sans-serif;
+        font-family: var(--font-heading);
         font-size: 52px;
         line-height: 48px;
         font-weight: 700;
@@ -23,4 +23,49 @@
         // left: 50%;
         // transform: translate(-50%, -50%);
     }
+
+    &_card-progress-bar {
+        position: relative;
+    }
+
+    &_card-progress-bar-value {
+        font-size: 32px;
+        line-height: 48px;
+        font-weight: 500;
+        color: var(--color-black);
+    }
+
+    &_card-progress-bar-inner {
+        flex: 1;
+        position: relative;
+        height: 8px;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: var(--color-light-gray);
+        margin-right: 24px;
+    }
+
+    &_card-progress-bar-inner-fill.clr-blue {
+        background: linear-gradient(275deg, #3a72ff 0%, #bddfff 100%);
+    }
+
+    &_card-progress-bar-inner-fill.clr-pink {
+        background: linear-gradient(275deg, #ff5c8a 0%, #bddfff 100%);
+    }
+
+    &_card-progress-bar-inner-fill.clr-red {
+        background: linear-gradient(275deg, #ff5c8a 0%, #bddfff 100%);
+    }
+
+    &_card-progress-bar-inner-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+
+    }
+
+
+
 }
