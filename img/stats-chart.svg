@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" fill="none">
+  <rect width="500" height="320" fill="#1a1a1a" rx="12"/>
+  <!-- Grid -->
+  <line x1="60" y1="40" x2="60" y2="280" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <line x1="60" y1="280" x2="460" y2="280" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <line x1="60" y1="200" x2="460" y2="200" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="60" y1="120" x2="460" y2="120" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Bars -->
+  <rect x="90" y="180" width="50" height="100" rx="6" fill="url(#bar1)"/>
+  <rect x="170" y="130" width="50" height="150" rx="6" fill="url(#bar2)"/>
+  <rect x="250" y="90" width="50" height="190" rx="6" fill="url(#bar3)"/>
+  <rect x="330" y="150" width="50" height="130" rx="6" fill="url(#bar4)"/>
+  <rect x="410" y="210" width="50" height="70" rx="6" fill="url(#bar5)"/>
+  <defs>
+    <linearGradient id="bar1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#E31837"/>
+      <stop offset="1" stop-color="#FECACA"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#B91C1C"/>
+      <stop offset="1" stop-color="#E31837"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#991B1B"/>
+      <stop offset="1" stop-color="#FECACA"/>
+    </linearGradient>
+    <linearGradient id="bar4" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#E31837"/>
+      <stop offset="1" stop-color="#FECACA"/>
+    </linearGradient>
+    <linearGradient id="bar5" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#B91C1B"/>
+      <stop offset="1" stop-color="#E31837"/>
+    </linearGradient>
+  </defs>
+  <!-- Labels -->
+  <text x="115" y="295" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui,sans-serif" font-size="11">50%</text>
+  <text x="195" y="295" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui,sans-serif" font-size="11">70%</text>
+  <text x="275" y="295" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui,sans-serif" font-size="11">83%</text>
+  <text x="355" y="295" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui,sans-serif" font-size="11">40%</text>
+  <text x="435" y="295" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui,sans-serif" font-size="11">+24%</text>
+</svg>

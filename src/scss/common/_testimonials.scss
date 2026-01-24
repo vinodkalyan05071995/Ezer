@@ -1,35 +1,170 @@
 .testimonials {
-    margin: 60px 0;
-    padding-block: 60px;
-    background-color: var(--color-light-gray);
+    padding: 64px 0;
+    background: var(--color-light-gray);
 
-    &_card_image {
-        aspect-ratio: 1/1;
+    &_header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &_heading {
+        font-family: var(--font-heading);
+        font-size: clamp(32px, 5vw, 42px);
+        font-weight: 600;
+        color: var(--color-black);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin: 0 0 8px;
+    }
+
+    &_subline {
+        font-family: var(--font-family);
+        font-size: 16px;
+        color: var(--color-gray);
+        margin: 0;
+    }
+
+    // Centered single-column: avatar on top, then quote card, then nav
+    &_grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 560px;
+        margin-inline: auto;
+    }
+
+    &_avatar {
+        margin-bottom: 24px;
+        flex-shrink: 0;
         overflow: hidden;
-        border-radius: 12px;
+
+        .swiper-containe1 {
+            width: 96px;
+            height: 96px;
+            margin-inline: auto;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 96px;
+        }
+    }
+
+    &_avatar-img {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        border: 3px solid rgba(227, 24, 55, 0.25);
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
     }
 
+    &_content {
+        width: 100%;
+    }
+
     &_card {
-        background-color: var(--color-white);
-        padding: 24px;
+        margin: 0 0 24px;
+        padding: 28px 24px 24px 28px;
+        background: var(--color-white);
+        border-radius: 16px;
+        border: 1px solid var(--color-border);
+        border-left: 4px solid var(--color-primary);
+        box-shadow: 0 4px 20px rgba(26, 26, 26, 0.06);
 
-        border-radius: 12px;
+        &::before,
+        &::after {
+            display: none !important;
+            content: none !important;
+        }
     }
 
-    .image-slider {
-        aspect-ratio: 1/1;
-        padding-inline: 54px;
-
+    &_quote {
+        font-family: var(--font-family);
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--color-black);
+        margin: 0 0 16px;
+        font-style: italic;
     }
 
-    .content-slider {
-        margin: auto;
-        max-width: 500px;
+    &_stars {
+        font-size: 1.1em;
+        letter-spacing: 2px;
+        color: var(--color-primary);
+        line-height: 1;
+        margin-bottom: 16px;
+    }
+
+    &_meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    &_name {
+        font-family: var(--font-heading);
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--color-black);
+    }
+
+    &_role {
+        font-family: var(--font-family);
+        font-size: 14px;
+        color: var(--color-gray);
+    }
+
+    &_nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        .swiper-button-prev-testimonials,
+        .swiper-button-next-testimonials {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--color-black);
+            transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover:not(:disabled) {
+                color: var(--color-primary);
+                border-color: var(--color-primary);
+                background: rgba(227, 24, 55, 0.06);
+                transform: scale(1.05);
+            }
+
+            &:disabled {
+                cursor: default;
+                opacity: 0.45;
+                color: var(--color-gray);
+            }
+        }
     }
 }

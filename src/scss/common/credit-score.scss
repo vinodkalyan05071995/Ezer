@@ -1,6 +1,6 @@
 .score-card {
     border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(31, 90, 133, 0.48);
+    box-shadow: 0 8px 30px rgba(154, 123, 10, 0.15);
 
     padding: 40px 0 0;
     text-align: center;
@@ -36,14 +36,14 @@
         display: flex;
         justify-content: space-between;
         font-size: 12px;
-        color: #666;
+        color: var(--color-gray);
         margin-top: 8px
     }
 
     &__score {
         font-size: 34px;
         font-weight: 600;
-        color: #111;
+        color: var(--color-b);
         margin-top: 12px;
     }
 
@@ -61,7 +61,7 @@
         align-items: center;
         margin-top: 24px;
         padding: 14px 24px;
-        box-shadow: 0 8px 30px rgba(31, 90, 133, 0.48);
+        box-shadow: 0 8px 30px rgba(154, 123, 10, 0.15);
     }
 }
 
@@ -71,7 +71,7 @@
 
     &--content {
         padding: 24px 32px;
-        background: radial-gradient(circle at top right, #FFF8D4 0%, #FEEF93 100%);
+        background: radial-gradient(circle at top right, var(--color-gold-light) 0%, var(--color-gold-lighter) 100%);
     }
 }
 
@@ -182,12 +182,12 @@
         border-radius: 8px;
 
         h3 {
-            border-bottom: 1px solid var(--color-black);
+            border-bottom: 1px solid var(--color-b);
         }
 
         &-item {
             padding: 6px 4px;
-            border-bottom: 1px solid #E6E6E6;
+            border-bottom: 1px solid var(--color-border);
 
             &:last-child {
                 border-bottom: none;
@@ -272,7 +272,7 @@
 
     &__range-score {
         padding: 16px 0;
-        border-top: 1px solid #D9D9D9;
+        border-top: 1px solid var(--color-border);
     }
 }
 

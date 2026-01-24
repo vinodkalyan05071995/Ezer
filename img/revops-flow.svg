@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" fill="none">
+  <defs>
+    <linearGradient id="flow-red" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E31837"/>
+      <stop offset="100%" style="stop-color:#991B1B"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="320" fill="#FAF6ED" rx="12"/>
+  <!-- Flow nodes -->
+  <circle cx="100" cy="160" r="36" fill="#E31837"/>
+  <text x="100" y="166" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="14" font-weight="600">DMS</text>
+  <circle cx="240" cy="100" r="32" fill="rgba(227,24,55,0.85)"/>
+  <text x="240" y="106" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Sales</text>
+  <circle cx="240" cy="160" r="32" fill="rgba(227,24,55,0.85)"/>
+  <text x="240" y="166" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Service</text>
+  <circle cx="240" cy="220" r="32" fill="rgba(227,24,55,0.85)"/>
+  <text x="240" y="226" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Parts</text>
+  <circle cx="380" cy="160" r="36" fill="#1a1a1a"/>
+  <text x="380" y="166" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="12" font-weight="600">RevOps</text>
+  <circle cx="500" cy="160" r="40" fill="url(#flow-red)"/>
+  <text x="500" y="152" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Deals</text>
+  <text x="500" y="168" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Closed</text>
+  <!-- Arrows -->
+  <path d="M136 160 L204 160" stroke="#E31837" stroke-width="2.5" marker-end="url(#arr)"/>
+  <path d="M272 115 L344 145" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="4 3" opacity="0.8"/>
+  <path d="M272 160 L344 160" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="4 3" opacity="0.8"/>
+  <path d="M272 205 L344 175" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="4 3" opacity="0.8"/>
+  <path d="M416 160 L460 160" stroke="#E31837" stroke-width="2.5"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#E31837"/>
+    </marker>
+  </defs>
+</svg>

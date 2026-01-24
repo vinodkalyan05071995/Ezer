@@ -3,7 +3,7 @@
     flex-direction: column-reverse;
     height: 25rem;
     font: 1rem/1.5 var(--font-family);
-    color: #313131;
+    color: var(--color-b);
     position: relative;
     overflow: hidden;
 
@@ -38,7 +38,7 @@
         animation: message .15s ease-out 0s forwards;
         animation-delay: var(--timeline);
 
-        --bgcolor: #d8d8d8;
+        --bgcolor: #E8E2D9;
         --radius: 12px 12px 12px 0;
 
         &_B {
@@ -47,7 +47,7 @@
             align-self: flex-end;
             transform-origin: 100% 100%;
 
-            --bgcolor: #d2ecd4;
+            --bgcolor: #F5F0E0;
             --radius: 12px 12px 0 12px;
         }
 

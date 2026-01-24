@@ -1,71 +1,98 @@
 .stats {
-    padding-block: 30px;
+    padding: 64px 0 56px;
 
-    &_card {
-        max-width: 250px;
-        margin: 0 auto;
+    &_header {
         text-align: center;
+        margin-bottom: 40px;
     }
 
-    &_card-image {
-        position: relative;
-    }
-
-    &_card-percentage {
-        // position: absolute;
+    &_heading {
         font-family: var(--font-heading);
-        font-size: 52px;
-        line-height: 48px;
-        font-weight: 700;
-        margin-block: 32px;
-        display: block;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-    }
-
-    &_card-progress-bar {
-        position: relative;
-    }
-
-    &_card-progress-bar-value {
-        font-size: 32px;
-        line-height: 48px;
-        font-weight: 500;
+        font-size: clamp(32px, 5vw, 42px);
+        font-weight: 600;
         color: var(--color-black);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin: 0 0 8px;
     }
 
-    &_card-progress-bar-inner {
-        flex: 1;
-        position: relative;
-        height: 8px;
-        border-radius: 12px;
+    &_subline {
+        font-family: var(--font-family);
+        font-size: 16px;
+        color: var(--color-gray);
+        margin: 0;
+    }
+
+    &_grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: center;
+
+        @media (min-width: 992px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+    }
+
+    &_media-frame {
+        border-radius: 16px;
         overflow: hidden;
-        background-color: var(--color-light-gray);
-        margin-right: 24px;
+        background: var(--color-light-gray);
+        box-shadow: 0 8px 32px rgba(26, 26, 26, 0.08);
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
     }
 
-    &_card-progress-bar-inner-fill.clr-blue {
-        background: linear-gradient(275deg, #3a72ff 0%, #bddfff 100%);
+    &_bars {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
     }
 
-    &_card-progress-bar-inner-fill.clr-pink {
-        background: linear-gradient(275deg, #ff5c8a 0%, #bddfff 100%);
+    &_bar {
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        &-label {
+            font-family: var(--font-family);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-black);
+        }
+
+        &-value {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-primary);
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        &-track {
+            height: 10px;
+            border-radius: 10px;
+            background: var(--color-light-gray);
+            overflow: hidden;
+        }
+
+        &-fill {
+            display: block;
+            height: 100%;
+            width: var(--w, 0);
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-gold-light) 100%);
+            transition: width 0.6s ease;
+        }
     }
-
-    &_card-progress-bar-inner-fill.clr-red {
-        background: linear-gradient(275deg, #ff5c8a 0%, #bddfff 100%);
-    }
-
-    &_card-progress-bar-inner-fill {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-
-    }
-
-
-
 }

@@ -130,29 +130,29 @@ var App = (() => {
       });
     }
     const btn = document.getElementById("scrollToTopBtn");
-    window.addEventListener("scroll", function() {
-      if (window.scrollY > 200) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
-    });
-    btn.addEventListener("click", function() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    if (btn) {
+      window.addEventListener("scroll", function() {
+        btn.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+      btn.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
     AOS.init();
-    var quoteSwiper = new Swiper(".swiper-containe1", {
-      effect: "fade"
-    });
-    var imageSwiper = new Swiper(".swiper-containe2", {
-      spaceBetween: 20,
-      navigation: {
-        nextEl: ".swiper-button-next-testimonials",
-        prevEl: ".swiper-button-prev-testimonials"
-      }
-    });
-    quoteSwiper.controller.control = imageSwiper;
-    imageSwiper.controller.control = quoteSwiper;
+    var el1 = document.querySelector(".swiper-containe1");
+    var el2 = document.querySelector(".swiper-containe2");
+    if (el1 && el2 && typeof Swiper !== "undefined") {
+      var quoteSwiper = new Swiper(".swiper-containe1", { effect: "fade" });
+      var imageSwiper = new Swiper(".swiper-containe2", {
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next-testimonials",
+          prevEl: ".swiper-button-prev-testimonials"
+        }
+      });
+      quoteSwiper.controller.control = imageSwiper;
+      imageSwiper.controller.control = quoteSwiper;
+    }
   });
 })();
 //# sourceMappingURL=base.js.map
