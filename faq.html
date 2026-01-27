@@ -6,7 +6,9 @@
         <title>FAQ</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600&display=swap"
+            rel="stylesheet">
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
             rel="stylesheet">
@@ -46,10 +48,72 @@
                         <div class="header-menu">
                             <ul
                                 class="m-0 p-0 menu-list d-lg-flex justify-content-lg-end align-items-lg-center">
-                                <li class="m-0 p-0"><a href="/chatbot.html"
-                                        class="menu-link link">Chatbot</a></li>
-                                <li class="m-0 p-0"><a href="/reach.html"
-                                        class="menu-link link">Reach</a></li>
+                                <!-- <li class="m-0 p-0"><a href="/chatbot.html"
+                                        class="menu-link link">Chatbot</a></li> -->
+                                <li class="m-0 p-0 dropdown">
+                                    <button
+                                        class="dropdown-btn btn-transparent menu-link link d-flex align-items-center"
+                                        type="button"
+                                        id="reachDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Solutions <span
+                                            class="dropdown-btn-icon ms-1 d-flex align-items-center">
+                                            <svg width="14" height="12"
+                                                viewBox="0 0 14 12"
+                                                style="vertical-align:middle;"
+                                                xmlns="http://www.w3.org/2000/svg"><polyline
+                                                    points="2,4 7,9 12,4"
+                                                    fill="none" stroke="white"
+                                                    stroke-width="1.5" /></svg>
+                                        </span>
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu reach-dropdown-menu"
+                                        aria-labelledby="reachDropdown">
+                                        <li><a class="dropdown-item"
+                                                href="/dms-management.html">DMS
+                                                Management</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/photo-studio-360.html">PhotoStudio
+                                                & 360</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/website-management.html">Website
+                                                Management</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="m-0 p-0 dropdown">
+                                    <button
+                                        class="dropdown-btn btn-transparent menu-link link d-flex align-items-center"
+                                        type="button"
+                                        id="reachDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Reach <span
+                                            class="dropdown-btn-icon ms-1 d-flex align-items-center">
+                                            <svg width="14" height="12"
+                                                viewBox="0 0 14 12"
+                                                style="vertical-align:middle;"
+                                                xmlns="http://www.w3.org/2000/svg"><polyline
+                                                    points="2,4 7,9 12,4"
+                                                    fill="none" stroke="white"
+                                                    stroke-width="1.5" /></svg>
+                                        </span>
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu reach-dropdown-menu"
+                                        aria-labelledby="reachDropdown">
+                                        <!-- <li><a class="dropdown-item"
+                                                href="/reach/used-cars.html"> F
+                                                & B</a></li> -->
+                                        <li><a class="dropdown-item"
+                                                href="/reach/rental-cars.html">Used
+                                                & Rental Cars</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/reach/jewellery.html">Jewellery</a></li>
+                                    </ul>
+                                </li>
                                 <li class="m-0 p-0"><a href="/insights.html"
                                         class="menu-link link">Insight</a></li>
                                 <li class="m-0 p-0"><a href="/pricing.html"
@@ -67,151 +131,167 @@
 
             </div>
         </header>
-        <section class="faq">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6">
-                        <h1 class="faq_title heading-fnt">FAQ</h1>
-                        <div class="faq_wrapper">
-                            <ul class="faq_list">
-                                <li class="faq_item">
-                                    <div class="faq_item_content">
-                                        <p class="faq_item_content_text">We Only
-                                            Work with Used Car Dealerships
-                                            We are 100% dedicated to the used
-                                            car industry. We understand the
-                                            unique challenges you face, from
-                                            inventory sourcing to BHPH and floor
-                                            plan management. </p>
+        <main class="main">
+            <section class="faq">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6">
+                            <h1 class="faq_title heading-fnt">FAQ</h1>
+                            <div class="faq_wrapper">
+                                <ul class="faq_list">
+                                    <li class="faq_item">
+                                        <div class="faq_item_content">
+                                            <p class="faq_item_content_text">We
+                                                Only
+                                                Work with Used Car Dealerships
+                                                We are 100% dedicated to the
+                                                used
+                                                car industry. We understand the
+                                                unique challenges you face, from
+                                                inventory sourcing to BHPH and
+                                                floor
+                                                plan management. </p>
+                                        </div>
+                                    </li>
+                                    <li class="faq_item">
+                                        <div class="faq_item_content">
+                                            <p
+                                                class="faq_item_content_text">Certified
+                                                Experts in Your DMS
+                                                Our team is composed of DMS
+                                                specialists who combine
+                                                technical
+                                                expertise with deep RevOps
+                                                experience. We know these
+                                                systems
+                                                inside and out, which means we
+                                                can
+                                                solve problems faster and
+                                                optimize
+                                                them more effectively than a
+                                                general
+                                                IT consultant.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq_item">
+                                        <div class="faq_item_content">
+                                            <p class="faq_item_content_text">A
+                                                Partner That Grows with You
+                                                Our services are designed to be
+                                                flexible. Whether you're a
+                                                single-lot operation or a
+                                                growing
+                                                multi-location enterprise, our
+                                                support scales to meet your
+                                                needs.
+                                                We help you build an operational
+                                                foundation that can support your
+                                                ambitions.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq_item">
+                                        <div class="faq_item_content">
+                                            <p class="faq_item_content_text">
+                                                Affordable, High-Impact
+                                                Expertise
+                                                Ezers gives you access to a
+                                                dedicated fractional ops team
+                                                that
+                                                can deliver a massive return on
+                                                your
+                                                investment.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- <div class="accordion accordion-flush"
+                                    id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseOne"
+                                                aria-expanded="false"
+                                                aria-controls="flush-collapseOne">
+                                                Accordion Item #1
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne"
+                                            class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample"
+                                            style>
+                                            <div class="accordion-body">Placeholder
+                                                content for this accordion, which is
+                                                intended to demonstrate the
+                                                <code>.accordion-flush</code> class.
+                                                This is the first item’s accordion
+                                                body.</div>
+                                        </div>
                                     </div>
-                                </li>
-                                <li class="faq_item">
-                                    <div class="faq_item_content">
-                                        <p
-                                            class="faq_item_content_text">Certified
-                                            Experts in Your DMS
-                                            Our team is composed of DMS
-                                            specialists who combine technical
-                                            expertise with deep RevOps
-                                            experience. We know these systems
-                                            inside and out, which means we can
-                                            solve problems faster and optimize
-                                            them more effectively than a general
-                                            IT consultant.</p>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseTwo"
+                                                aria-expanded="false"
+                                                aria-controls="flush-collapseTwo">
+                                                Accordion Item #2
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwo"
+                                            class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample"
+                                            style>
+                                            <div class="accordion-body">Placeholder
+                                                content for this accordion, which is
+                                                intended to demonstrate the
+                                                <code>.accordion-flush</code> class.
+                                                This is the second item’s accordion
+                                                body. Let’s imagine this being
+                                                filled with some actual
+                                                content.</div>
+                                        </div>
                                     </div>
-                                </li>
-                                <li class="faq_item">
-                                    <div class="faq_item_content">
-                                        <p class="faq_item_content_text">A
-                                            Partner That Grows with You
-                                            Our services are designed to be
-                                            flexible. Whether you're a
-                                            single-lot operation or a growing
-                                            multi-location enterprise, our
-                                            support scales to meet your needs.
-                                            We help you build an operational
-                                            foundation that can support your
-                                            ambitions.</p>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseThree"
+                                                aria-expanded="false"
+                                                aria-controls="flush-collapseThree">
+                                                Accordion Item #3
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThree"
+                                            class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">Placeholder
+                                                content for this accordion, which is
+                                                intended to demonstrate the
+                                                <code>.accordion-flush</code> class.
+                                                This is the third item’s accordion
+                                                body. Nothing more exciting
+                                                happening here in terms of content,
+                                                but just filling up the space to
+                                                make it look, at least at first
+                                                glance, a bit more representative of
+                                                how this would look in a real-world
+                                                application.</div>
+                                        </div>
                                     </div>
-                                </li>
-                                <li class="faq_item">
-                                    <div class="faq_item_content">
-                                        <p class="faq_item_content_text">
-                                            Affordable, High-Impact Expertise
-                                            Ezers gives you access to a
-                                            dedicated fractional ops team that
-                                            can deliver a massive return on your
-                                            investment.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <!-- <div class="accordion accordion-flush"
-                                id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button
-                                            class="accordion-button collapsed"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseOne"
-                                            aria-expanded="false"
-                                            aria-controls="flush-collapseOne">
-                                            Accordion Item #1
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne"
-                                        class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample"
-                                        style>
-                                        <div class="accordion-body">Placeholder
-                                            content for this accordion, which is
-                                            intended to demonstrate the
-                                            <code>.accordion-flush</code> class.
-                                            This is the first item’s accordion
-                                            body.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button
-                                            class="accordion-button collapsed"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false"
-                                            aria-controls="flush-collapseTwo">
-                                            Accordion Item #2
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo"
-                                        class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample"
-                                        style>
-                                        <div class="accordion-body">Placeholder
-                                            content for this accordion, which is
-                                            intended to demonstrate the
-                                            <code>.accordion-flush</code> class.
-                                            This is the second item’s accordion
-                                            body. Let’s imagine this being
-                                            filled with some actual
-                                            content.</div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button
-                                            class="accordion-button collapsed"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseThree"
-                                            aria-expanded="false"
-                                            aria-controls="flush-collapseThree">
-                                            Accordion Item #3
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseThree"
-                                        class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder
-                                            content for this accordion, which is
-                                            intended to demonstrate the
-                                            <code>.accordion-flush</code> class.
-                                            This is the third item’s accordion
-                                            body. Nothing more exciting
-                                            happening here in terms of content,
-                                            but just filling up the space to
-                                            make it look, at least at first
-                                            glance, a bit more representative of
-                                            how this would look in a real-world
-                                            application.</div>
-                                    </div>
-                                </div>
-                            </div> -->
+                                </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+        </main>
 
         <script defer
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">

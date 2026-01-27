@@ -1,6 +1,83 @@
 .blogs {
     padding: 64px 0 56px;
 
+    // Card block used on blogs.html (blogs_cards)
+    &_cards {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+        background: var(--color-white);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(26, 26, 26, 0.1);
+            border-color: rgba(227, 24, 55, 0.3);
+
+            .blogs_cards-description {
+                color: var(--color-black);
+            }
+
+            .blogs_cards-date {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    &_cards-image {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: var(--color-light-gray);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .blogs_cards:hover & img {
+            transform: scale(1.04);
+        }
+    }
+
+    &_cards-content {
+        padding: 20px 20px 24px;
+    }
+
+    &_cards-date {
+        font-family: var(--font-family);
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--color-gray);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    &_cards-heading {
+        font-family: var(--font-heading);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--color-black);
+        margin: 0 0 8px;
+    }
+
+    &_cards-description {
+        font-family: var(--font-family);
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--color-gray);
+        margin: 0;
+        transition: color 0.25s ease;
+    }
+
     &_header {
         text-align: center;
         margin-bottom: 40px;
