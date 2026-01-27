@@ -624,6 +624,10 @@ input::placeholder {
         width: 100px;
         z-index: 2;
         pointer-events: none;
+
+        @media (max-width: 767px) {
+            width: 25px;
+        }
     }
 
     &::before {
@@ -659,6 +663,7 @@ input::placeholder {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -668,6 +673,7 @@ input::placeholder {
     0% {
         transform: translateX(-50%);
     }
+
     100% {
         transform: translateX(0);
     }

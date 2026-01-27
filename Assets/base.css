@@ -1160,6 +1160,12 @@ input::placeholder {
   z-index: 2;
   pointer-events: none;
 }
+@media (max-width: 767px) {
+  .marquee-row::before,
+  .marquee-row::after {
+    width: 25px;
+  }
+}
 .marquee-row::before {
   left: 0;
   background:
