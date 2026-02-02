@@ -13,24 +13,24 @@
   <rect x="410" y="210" width="50" height="70" rx="6" fill="url(#bar5)"/>
   <defs>
     <linearGradient id="bar1" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0" stop-color="#E31837"/>
+      <stop offset="0" stop-color="#2563EB"/>
       <stop offset="1" stop-color="#FECACA"/>
     </linearGradient>
     <linearGradient id="bar2" x1="0" y1="1" x2="0" y2="0">
       <stop offset="0" stop-color="#B91C1C"/>
-      <stop offset="1" stop-color="#E31837"/>
+      <stop offset="1" stop-color="#2563EB"/>
     </linearGradient>
     <linearGradient id="bar3" x1="0" y1="1" x2="0" y2="0">
       <stop offset="0" stop-color="#991B1B"/>
       <stop offset="1" stop-color="#FECACA"/>
     </linearGradient>
     <linearGradient id="bar4" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0" stop-color="#E31837"/>
+      <stop offset="0" stop-color="#2563EB"/>
       <stop offset="1" stop-color="#FECACA"/>
     </linearGradient>
     <linearGradient id="bar5" x1="0" y1="1" x2="0" y2="0">
       <stop offset="0" stop-color="#B91C1B"/>
-      <stop offset="1" stop-color="#E31837"/>
+      <stop offset="1" stop-color="#2563EB"/>
     </linearGradient>
   </defs>
   <!-- Labels -->

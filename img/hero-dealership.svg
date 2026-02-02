@@ -4,19 +4,19 @@
       <stop offset="0%" style="stop-color:#1a1a1a"/>
       <stop offset="100%" style="stop-color:#2d2d2d"/>
     </linearGradient>
-    <linearGradient id="hero-red" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#E31837"/>
-      <stop offset="100%" style="stop-color:#B91C1C"/>
+    <linearGradient id="hero-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
     </linearGradient>
   </defs>
   <rect width="800" height="500" fill="url(#hero-bg)" rx="12"/>
   <!-- Abstract car silhouette -->
-  <path d="M120 380 L180 320 L280 320 L340 260 L520 260 L580 320 L680 320 L720 380 Z" fill="rgba(227,24,55,0.15)" stroke="#E31837" stroke-width="2"/>
+  <path d="M120 380 L180 320 L280 320 L340 260 L520 260 L580 320 L680 320 L720 380 Z" fill="rgba(37,99,235,0.15)" stroke="#2563EB" stroke-width="2"/>
   <!-- Building/dealership block -->
-  <rect x="260" y="200" width="280" height="180" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(227,24,55,0.5)" stroke-width="1.5"/>
-  <rect x="280" y="220" width="60" height="50" rx="4" fill="url(#hero-red)" opacity="0.8"/>
+  <rect x="260" y="200" width="280" height="180" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(37,99,235,0.5)" stroke-width="1.5"/>
+  <rect x="280" y="220" width="60" height="50" rx="4" fill="url(#hero-blue)" opacity="0.8"/>
   <rect x="360" y="220" width="60" height="50" rx="4" fill="rgba(255,255,255,0.1)"/>
   <rect x="440" y="220" width="60" height="50" rx="4" fill="rgba(255,255,255,0.1)"/>
   <!-- Accent line -->
-  <line x1="0" y1="420" x2="800" y2="420" stroke="url(#hero-red)" stroke-width="3" opacity="0.6"/>
+  <line x1="0" y1="420" x2="800" y2="420" stroke="url(#hero-blue)" stroke-width="3" opacity="0.6"/>
 </svg>

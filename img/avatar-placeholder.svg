@@ -5,11 +5,11 @@
       <stop offset="100%" style="stop-color:#1a1a1a"/>
     </linearGradient>
   </defs>
-  <circle cx="60" cy="60" r="58" fill="url(#av-bg)" stroke="rgba(227,24,55,0.3)" stroke-width="2"/>
+  <circle cx="60" cy="60" r="58" fill="url(#av-bg)" stroke="rgba(37,99,235,0.3)" stroke-width="2"/>
   <!-- Head -->
   <circle cx="60" cy="42" r="18" fill="rgba(255,255,255,0.2)"/>
   <!-- Shoulders -->
   <path d="M30 95 Q60 75 90 95 L90 120 L30 120 Z" fill="rgba(255,255,255,0.15)"/>
   <!-- Initial ring -->
-  <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(227,24,55,0.2)" stroke-width="1" stroke-dasharray="4 2"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(37,99,235,0.2)" stroke-width="1" stroke-dasharray="4 2"/>
 </svg>

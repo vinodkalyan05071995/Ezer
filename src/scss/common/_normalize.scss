@@ -25,7 +25,7 @@ html {
 :root {
     --font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
     --font-heading: "Cormorant Garamond", "Georgia", serif;
-    --secondary-color: #E31837;
+    --secondary-color: #2563EB;
 }
 
 body {
@@ -513,28 +513,38 @@ select {
 }
 
 :root {
-    /* Glossy red palette */
-    --color-gold: #E31837;
-    --color-gold-dark: #991B1B;
-    --color-gold-light: #FECACA;
-    --color-gold-lighter: #FEE2E2;
-    /* Neutrals */
-    --color-black: #1a1a1a;
-    --color-primary: #E31837;
-    --color-link: #B91C1C;
-    --color-secondary: #E31837;
-    --color-sidebar-background: #991B1B;
+    /* Blue + metal gray — creative elegant palette */
+    --color-primary: #2563EB;
+    --color-secondary: #1D4ED8;
+    --color-gold: #2563EB;
+    --color-gold-dark: #1E40AF;
+    --color-gold-light: #93C5FD;
+    --color-gold-lighter: #DBEAFE;
+    /* Metal gray neutrals */
+    --color-metal-50: #f8fafc;
+    --color-metal-100: #f1f5f9;
+    --color-metal-200: #e2e8f0;
+    --color-metal-300: #cbd5e1;
+    --color-metal-400: #94a3b8;
+    --color-metal-500: #64748b;
+    --color-metal-600: #475569;
+    --color-metal-700: #334155;
+    --color-metal-800: #1e293b;
+    --color-metal-900: #0f172a;
+    /* Legacy neutrals (mapped to metal) */
+    --color-black: #0f172a;
+    --color-link: #2563EB;
+    --color-sidebar-background: #1e293b;
     --color-white: #FFFFFF;
-    --color-gray: #6B5B4F;
-    --color-light-gray: #FAF6ED;
-    --color-border: #E8E2D9;
-    --color-b: #1a1a1a;
+    --color-gray: #64748b;
+    --color-light-gray: #f1f5f9;
+    --color-border: #e2e8f0;
+    --color-b: #0f172a;
     --color-green: #5a6b2c;
-    /* Supporting */
-    --color-text: #1a1a1a;
-    --color-text-rgb: 26, 26, 26;
-    --color-input-color: #6B5B4F;
-    --color-bg: #991B1B;
+    --color-text: #0f172a;
+    --color-text-rgb: 15, 23, 42;
+    --color-input-color: #475569;
+    --color-bg: #1e293b;
     --font-body-scale: 1;
     --font-body-weight: 400;
     --font-body-weight-bold: 700;

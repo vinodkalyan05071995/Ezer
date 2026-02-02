@@ -211,10 +211,10 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg,
-                    rgba(26, 26, 26, 0.92) 0%,
+                    rgba(15, 23, 42, 0.92) 0%,
                     rgba(26, 26, 26, 0.75) 35%,
-                    rgba(153, 27, 27, 0.25) 70%,
-                    rgba(227, 24, 55, 0.12) 100%);
+                    rgba(30, 41, 59, 0.25) 70%,
+                    rgba(37, 99, 235, 0.12) 100%);
         }
     }
 
@@ -233,7 +233,7 @@
 
     &_shape {
         position: absolute;
-        border: 1px solid rgba(227, 24, 55, 0.25);
+        border: 1px solid rgba(37, 99, 235, 0.25);
         border-radius: 50%;
 
         &--1 {
@@ -264,7 +264,7 @@
         &--line {
             position: absolute;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(227, 24, 55, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.4), transparent);
             width: 40%;
             bottom: 25%;
             left: 0;
@@ -311,8 +311,8 @@
         align-items: center;
         gap: 8px;
         padding: 8px 16px;
-        background: rgba(227, 24, 55, 0.18);
-        border: 1px solid rgba(227, 24, 55, 0.45);
+        background: rgba(37, 99, 235, 0.18);
+        border: 1px solid rgba(37, 99, 235, 0.45);
         border-radius: 100px;
         color: var(--color-secondary);
         font-family: var(--font-family);
@@ -389,7 +389,7 @@
                 background: transparent;
                 color: #fff;
                 border-color: #fff;
-                box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
                 transform: translateY(-2px);
             }
         }
@@ -422,7 +422,7 @@
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 24px 56px rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(227, 24, 55, 0.2);
+        border: 1px solid rgba(37, 99, 235, 0.2);
 
         &::before {
             content: '';
