@@ -72,7 +72,7 @@ function copyDir(src, dest) {
         console.log('📦 Copying static files to dist...');
 
         // Copy HTML files
-        const htmlFiles = ['index.html', 'blogs.html', 'chatbot.html', 'faq.html', 'insights.html', 'pricing.html', 'reach.html', 'dms-management.html', 'website-management.html'];
+        const htmlFiles = ['index.html', 'blogs.html', 'chatbot.html', 'faq.html', 'insights.html', 'pricing.html', 'reach.html', 'dms-management.html', 'website-management.html', 'photo-studio-360.html'];
         htmlFiles.forEach(file => {
             const src = join(__dirname, file);
             const dest = join(__dirname, 'dist', file);
