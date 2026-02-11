@@ -103,11 +103,21 @@ function transformHtmlForRegion(html, region) {
         console.log('📦 Copying static files to dist...');
 
         // Create us/ and au/ subfolders with transformed HTML
-        const htmlFiles = ['index.html', 'blogs.html', 'chatbot.html', 'faq.html', 'insights.html', 'pricing.html', 'reach.html', 'dms-management.html', 'website-management.html', 'photo-studio-360.html'];
+        const otherHtmlFiles = ['blogs.html', 'chatbot.html', 'faq.html', 'insights.html', 'pricing.html', 'reach.html', 'dms-management.html', 'website-management.html', 'photo-studio-360.html'];
+        const indexSources = { us: 'index-us.html', au: 'index-au.html' };
         ['us', 'au'].forEach(region => {
             const regionDir = join(__dirname, 'dist', region);
             if (!existsSync(regionDir)) mkdirSync(regionDir, { recursive: true });
-            htmlFiles.forEach(file => {
+            // Index: use index-us.html for us/, index-au.html for au/
+            const indexSrc = join(__dirname, indexSources[region]);
+            if (existsSync(indexSrc)) {
+                const content = readFileSync(indexSrc, 'utf8');
+                const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'AU');
+                writeFileSync(join(regionDir, 'index.html'), transformed);
+                console.log(`  ✓ ${region}/index.html (from ${indexSources[region]})`);
+            }
+            // Other pages: shared source for both regions
+            otherHtmlFiles.forEach(file => {
                 const src = join(__dirname, file);
                 const dest = join(regionDir, file);
                 if (existsSync(src)) {
