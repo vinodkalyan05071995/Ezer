@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting — Ezer</title>
+    <style>
+        body { font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f5f5f5; }
+        .msg { text-align: center; color: #333; }
+        .spinner { width: 40px; height: 40px; border: 3px solid #ddd; border-top-color: #D4AF37; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="msg">
+        <div class="spinner"></div>
+        <p>Redirecting to your region...</p>
+    </div>
+    <script>
+(function() {
+    var region = localStorage.getItem('ezer_region');
+    if (region === 'AU' || region === 'US') {
+        location.replace('/' + region.toLowerCase() + '/');
+        return;
+    }
+    fetch('https://ip-api.com/json/?fields=countryCode')
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+            var code = (d && d.countryCode) || '';
+            region = (code === 'AU') ? 'au' : 'us';
+            localStorage.setItem('ezer_region', region.toUpperCase());
+            location.replace('/' + region + '/');
+        })
+        .catch(function() {
+            localStorage.setItem('ezer_region', 'US');
+            location.replace('/us/');
+        });
+})();
+    </script>
+</body>
+</html>
