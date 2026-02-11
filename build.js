@@ -107,18 +107,29 @@ function transformHtmlForRegion(html, region) {
         console.log('📦 Copying static files to dist...');
 
         // Create us/ and au/ subfolders with transformed HTML
-        const otherHtmlFiles = ['blogs.html', 'chatbot.html', 'faq.html', 'insights.html', 'pricing.html', 'reach.html', 'dms-management.html', 'website-management.html', 'photo-studio-360.html'];
-        const indexSources = { us: 'index-us.html', au: 'index-au.html' };
+        const otherHtmlFiles = ['blogs.html', 'chatbot.html', 'faq.html', 'insights.html', 'reach.html', 'dms-management.html', 'website-management.html', 'photo-studio-360.html'];
+        const regionSources = {
+            index: { us: 'index-us.html', au: 'index-au.html' },
+            pricing: { us: 'pricing-us.html', au: 'pricing-au.html' }
+        };
         ['us', 'au'].forEach(region => {
             const regionDir = join(__dirname, 'dist', region);
             if (!existsSync(regionDir)) mkdirSync(regionDir, { recursive: true });
             // Index: use index-us.html for us/, index-au.html for au/
-            const indexSrc = join(__dirname, indexSources[region]);
+            const indexSrc = join(__dirname, regionSources.index[region]);
             if (existsSync(indexSrc)) {
                 const content = readFileSync(indexSrc, 'utf8');
                 const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'AU');
                 writeFileSync(join(regionDir, 'index.html'), transformed);
-                console.log(`  ✓ ${region}/index.html (from ${indexSources[region]})`);
+                console.log(`  ✓ ${region}/index.html (from ${regionSources.index[region]})`);
+            }
+            // Pricing: use pricing-us.html for us/, pricing-au.html for au/
+            const pricingSrc = join(__dirname, regionSources.pricing[region]);
+            if (existsSync(pricingSrc)) {
+                const content = readFileSync(pricingSrc, 'utf8');
+                const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'AU');
+                writeFileSync(join(regionDir, 'pricing.html'), transformed);
+                console.log(`  ✓ ${region}/pricing.html (from ${regionSources.pricing[region]})`);
             }
             // Other pages: shared source for both regions
             otherHtmlFiles.forEach(file => {
