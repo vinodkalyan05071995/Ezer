@@ -41,17 +41,21 @@ function transformHtmlForRegion(html, region) {
     out = out.replace(/<html([^>]*)>/i, (m, attrs) => {
         return `<html${attrs} data-region="${region}">`;
     });
-    // Inject region switcher before </body>
+    // Inject region dropdown before </body>
     const switcher = `
         <script>
         (function(){
             var path=(location.pathname.replace(/^\\/(us|au)\\/?/,'')||'index.html').replace(/^\\//,'');
             var region=document.documentElement.getAttribute('data-region')||'US';
-            var other=region==='US'?'au':'us';
-            var url='/'+other+'/'+path;
-            var label=other==='us'?'United States':'Australia';
+            var urlUS='/us/'+path;
+            var urlAU='/au/'+path;
+            var labelUS='United States';
+            var labelAU='Australia';
+            var currentLabel=region==='US'?labelUS:labelAU;
+            var svg='<svg width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg"><polyline points="2,4 7,9 12,4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+            var html='<li class="m-0 p-0 ms-lg-3 dropdown dropdown-locale"><button class="dropdown-btn btn-transparent menu-link link d-flex align-items-center" type="button" id="localeDropdown" data-bs-toggle="dropdown" aria-expanded="false"><span class="locale-current">'+currentLabel+'</span><span class="dropdown-btn-icon ms-1 d-flex align-items-center">'+svg+'</span></button><ul class="dropdown-menu reach-dropdown-menu dropdown-menu-locale" aria-labelledby="localeDropdown"><li><a class="dropdown-item" href="'+urlUS+'">'+labelUS+'</a></li><li><a class="dropdown-item" href="'+urlAU+'">'+labelAU+'</a></li></ul></li>';
             var el=document.querySelector('.menu-list');
-            if(el){var li=document.createElement('li');li.className='m-0 p-0 ms-lg-3';li.innerHTML='<a class="menu-link link" href="'+url+'">'+label+'</a>';el.appendChild(li);}
+            if(el){el.insertAdjacentHTML('beforeend',html);}
         })();
         <\/script>`;
     out = out.replace('</body>', switcher + '\n    </body>');

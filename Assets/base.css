@@ -358,6 +358,13 @@ footer {
 .header .menu-link:hover::after {
   width: 100%;
 }
+.header .dropdown-locale .locale-current {
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .score-card {
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(154, 123, 10, 0.15);
