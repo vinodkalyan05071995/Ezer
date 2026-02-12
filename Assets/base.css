@@ -347,7 +347,7 @@ footer {
     padding: 8px 0;
   }
 }
-.header .menu-link::after {
+.header .menu-link:not(.dropdown-btn)::after {
   content: "";
   display: block;
   width: 0%;
@@ -355,7 +355,7 @@ footer {
   background-color: var(--color-primary);
   transition: width 0.3s ease-in-out;
 }
-.header .menu-link:hover::after {
+.header .menu-link:not(.dropdown-btn):hover::after {
   width: 100%;
 }
 .header .dropdown-locale .locale-current {

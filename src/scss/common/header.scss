@@ -63,7 +63,7 @@
             padding: 8px 0;
         }
 
-        &::after {
+        &:not(.dropdown-btn)::after {
             content: '';
             display: block;
             width: 0%;
@@ -72,7 +72,7 @@
             transition: width 0.3s ease-in-out;
         }
 
-        &:hover {
+        &:not(.dropdown-btn):hover {
             &::after {
                 width: 100%;
             }
