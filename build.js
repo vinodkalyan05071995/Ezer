@@ -57,7 +57,8 @@ function transformHtmlForRegion(html, region) {
             var el=document.querySelector('.menu-list');
             if(el){el.insertAdjacentHTML('beforeend',html);}
         })();
-        <\/script>`;
+        <\/script>
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3d4b2e0b-225e-43af-8412-66d82cf45cc6";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();<\/script>`;
     out = out.replace('</body>', switcher + '\n    </body>');
     return out;
 }
