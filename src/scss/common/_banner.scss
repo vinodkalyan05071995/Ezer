@@ -120,6 +120,11 @@
         z-index: 2;
         padding: 48px 40px;
         max-width: 520px;
+
+        @media (max-width: 767px) {
+            padding: 28px 20px;
+            max-width: 100%;
+        }
     }
 
     &_title {

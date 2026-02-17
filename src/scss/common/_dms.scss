@@ -2,7 +2,6 @@
 // =============================================================================
 
 .dms-hero {
-    margin-top: 100px;
     padding-bottom: 64px;
     position: relative;
     overflow: hidden;
@@ -38,9 +37,9 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg,
-                rgba(15, 23, 42, 0.94) 0%,
-                rgba(26, 26, 26, 0.8) 40%,
-                rgba(37, 99, 235, 0.15) 100%);
+                    rgba(15, 23, 42, 0.94) 0%,
+                    rgba(26, 26, 26, 0.8) 40%,
+                    rgba(37, 99, 235, 0.15) 100%);
         }
     }
 
@@ -88,8 +87,15 @@
     }
 
     @keyframes dms-float {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(6px, -6px); }
+
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(6px, -6px);
+        }
     }
 
     &_inner {
@@ -477,6 +483,7 @@
             .dms-features_content {
                 order: 2;
             }
+
             .dms-features_visual {
                 order: 1;
             }
@@ -660,7 +667,9 @@
             position: relative;
             border-bottom: 1px solid var(--color-border);
 
-            &:last-child { border-bottom: none; }
+            &:last-child {
+                border-bottom: none;
+            }
 
             &::before {
                 content: '?';
@@ -771,5 +780,192 @@
         background: rgba(255, 255, 255, 0.05);
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+}
+
+// Mobile layout fixes
+@media (max-width: 767px) {
+    .dms-hero {
+        padding-bottom: 40px;
+
+        &_container {
+            min-height: 360px;
+            border-radius: 16px;
+        }
+
+        &_inner {
+            padding: 32px 20px 36px;
+        }
+
+        &_title {
+            font-size: clamp(26px, 6vw, 34px);
+        }
+
+        &_description {
+            font-size: 15px;
+        }
+
+        &_btn {
+            padding: 12px 20px;
+            font-size: 11px;
+        }
+
+        &_strip {
+            gap: 12px 16px;
+            margin-top: 24px;
+            padding-top: 20px;
+        }
+
+        &_strip-item {
+            font-size: 12px;
+        }
+    }
+
+    .dms-pipeline {
+        padding: 32px 0 40px;
+
+        &_inner {
+            gap: 12px 16px;
+        }
+
+        &_step {
+            padding: 12px 16px;
+            gap: 12px;
+            flex-wrap: wrap;
+
+            &-num {
+                font-size: 18px;
+                width: 32px;
+                height: 32px;
+            }
+
+            &-text {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .dms-pillars {
+        padding: 40px 0 48px;
+
+        &_header {
+            margin-bottom: 32px;
+        }
+
+        &_heading {
+            font-size: 24px;
+        }
+
+        &_subline {
+            font-size: 15px;
+        }
+
+        &_card-body {
+            padding: 20px 18px 20px;
+        }
+
+        &_card-title {
+            font-size: 18px;
+        }
+
+        &_card-desc {
+            font-size: 14px;
+        }
+    }
+
+    .dms-features {
+        padding: 40px 0;
+
+        &_block {
+            padding: 32px 0;
+            gap: 24px;
+        }
+
+        &_title {
+            font-size: 22px;
+        }
+
+        &_text {
+            font-size: 15px;
+        }
+
+        &_list-item {
+            font-size: 14px;
+        }
+    }
+
+    .dms-blocks {
+        gap: 14px;
+        margin-bottom: 20px;
+
+        &_item {
+            padding: 16px 18px;
+        }
+
+        &_title {
+            font-size: 15px;
+        }
+
+        &_list li {
+            font-size: 13px;
+        }
+    }
+
+    .dms-why {
+        gap: 8px 12px;
+        margin: 16px 0;
+
+        &_pill {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+    }
+
+    .dms-questions {
+        padding: 20px 20px;
+        margin: 20px 0;
+
+        &_title {
+            font-size: 14px;
+        }
+
+        &_list li {
+            font-size: 14px;
+            padding: 8px 0 8px 28px;
+        }
+    }
+
+    .dms-eliminate-inline {
+        gap: 10px 12px;
+        overflow-wrap: break-word;
+
+        &_item {
+            padding: 10px 12px;
+            font-size: 12px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+    }
+
+    .dms-eliminate {
+        padding: 40px 0 48px;
+
+        &_heading {
+            font-size: 22px;
+        }
+
+        &_subline {
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        &_grid {
+            gap: 12px 16px;
+        }
+
+        &_item {
+            font-size: 12px;
+            padding: 10px 12px;
+        }
     }
 }

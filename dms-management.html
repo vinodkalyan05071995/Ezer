@@ -24,9 +24,26 @@
             .dms-hero h1 { position: relative; padding-bottom: 16px; }
             .dms-hero h1::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); border-radius: 2px; }
             .dms-section-content { padding-left: 0; }
-            .dms-section-img { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(26,26,26,0.08); border: 1px solid var(--color-border); }
+            .dms-section-img { border-radius: 16px; overflow: hidden; max-width: 100%; }
             .dms-section-img img { display: block; width: 100%; height: 100%; object-fit: contain; background: var(--color-light-gray); }
             .dms-badge { display: inline-block; padding: 6px 14px; background: rgba(37,99,235,0.1); border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 16px; }
+            @media (max-width: 767px) {
+                html, body, .main { overflow-x: hidden; }
+                .main .container { padding-inline: 24px; }
+                .main .row > [class*="col-"] { min-width: 0; }
+                .dms-hero h1 { font-size: 28px !important; letter-spacing: 0.03em; }
+                .dms-section-img {
+                    max-height: 280px !important;
+                    aspect-ratio: auto !important;
+                    width: 100% !important;
+                }
+                .dms-section-img img { height: auto !important; object-fit: contain; }
+                .dms-section-content, .dms-blocks, .dms-why, .dms-eliminate-inline, .dms-badge { overflow-wrap: break-word; word-wrap: break-word; }
+                .dms-section-content h2 { font-size: 22px !important; }
+                .dms-section-content h3 { font-size: 16px !important; }
+                .dms-section-content h4 { font-size: 15px !important; }
+                .dms-section-content p, .dms-section-content li { font-size: 14px !important; }
+            }
         </style>
     </head>
     <body>
@@ -149,7 +166,7 @@
                     <div class="row align-items-start">
                         <div class="col-12 col-lg-6 mb-4 mb-lg-0">
                             <div class="dms-section-img" style="max-height: 420px; aspect-ratio: 4/3;">
-                                <img src="img/revops-flow.svg" alt="Lead routing and pipeline flow">
+                                <img src="img/dms-crm-pipeline.svg" alt="CRM pipeline dashboard with lead tracking and sales metrics">
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 dms-section-content">
@@ -208,7 +225,7 @@
                     <div class="row align-items-start flex-row-reverse">
                         <div class="col-12 col-lg-6 mb-4 mb-lg-0">
                             <div class="dms-section-img" style="max-height: 420px; aspect-ratio: 4/3;">
-                                <img src="img/car.jpg" alt="Inventory and stock management">
+                                <img src="img/dms-inventory.svg" alt="Inventory aging dashboard with stock analytics and pricing alerts">
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 dms-section-content">
@@ -278,7 +295,7 @@
                     <div class="row align-items-start">
                         <div class="col-12 col-lg-6 mb-4 mb-lg-0">
                             <div class="dms-section-img" style="max-height: 420px; aspect-ratio: 4/3;">
-                                <img src="img/ai-chat.svg" alt="Digital retail and online lead experience">
+                                <img src="img/dms-digital-retail.svg" alt="Digital retailing ecosystem with CRM DMS and website integration">
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 dms-section-content">
