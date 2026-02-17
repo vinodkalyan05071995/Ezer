@@ -99,34 +99,87 @@ var App = (() => {
     const contactForm = document.getElementById("contact-form");
     const formMessage = document.getElementById("form-message");
     const submitBtn = document.getElementById("submit-btn");
-    if (contactForm && typeof emailjs !== "undefined") {
-      emailjs.init("X3FblCXeZ8HtDbEQ8");
-      document.getElementById("contact-form").addEventListener("submit", function(event) {
+    function pushFormDataToCrisp(form) {
+      if (typeof window.$crisp === "undefined") return;
+      const formData = new FormData(form);
+      const name = formData.get("name") || "";
+      const email = formData.get("email") || "";
+      const phone = formData.get("phone") || "";
+      const dealership = formData.get("dealership") || "";
+      const message = formData.get("message") || "";
+      window.$crisp.push(["set", "user:email", [email]]);
+      window.$crisp.push(["set", "user:phone", [phone]]);
+      window.$crisp.push(["set", "user:nickname", [name]]);
+      window.$crisp.push(["set", "session:data", [[
+        ["dealership", dealership],
+        ["message", message]
+      ]]]);
+    }
+    function openCrispChat() {
+      if (typeof window.$crisp === "undefined") return;
+      window.$crisp.push(["do", "chat:open"]);
+    }
+    if (contactForm) {
+      if (typeof emailjs !== "undefined") {
+        emailjs.init("X3FblCXeZ8HtDbEQ8");
+      }
+      contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-        formMessage.style.display = "none";
-        const serviceID = "service_bhil0bh";
-        const templateID = "template_7w2nm24";
-        emailjs.sendForm(serviceID, templateID, this).then(() => {
-          formMessage.style.display = "block";
-          formMessage.style.backgroundColor = "#d4edda";
-          formMessage.style.color = "#155724";
-          formMessage.style.border = "1px solid #c3e6cb";
-          formMessage.textContent = "Thank you! Your message has been sent successfully.";
-          contactForm.reset();
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit";
-        }, (err) => {
-          formMessage.style.display = "block";
-          formMessage.style.backgroundColor = "#f8d7da";
-          formMessage.style.color = "#721c24";
-          formMessage.style.border = "1px solid #f5c6cb";
-          formMessage.textContent = "Sorry, there was an error sending your message. Please try again.";
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit";
-          alert(JSON.stringify(err));
-        });
+        const form = event.target instanceof HTMLFormElement ? event.target : contactForm.querySelector("form");
+        if (!form) return;
+        pushFormDataToCrisp(form);
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+        }
+        if (formMessage) formMessage.style.display = "none";
+        if (typeof emailjs !== "undefined") {
+          const serviceID = "service_bhil0bh";
+          const templateID = "template_7w2nm24";
+          emailjs.sendForm(serviceID, templateID, form).then(() => {
+            if (formMessage) {
+              formMessage.style.display = "block";
+              formMessage.style.backgroundColor = "#d4edda";
+              formMessage.style.color = "#155724";
+              formMessage.style.border = "1px solid #c3e6cb";
+              formMessage.textContent = "Thank you! Your message has been sent successfully.";
+            }
+            form.reset();
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Submit";
+            }
+            openCrispChat();
+          }, (err) => {
+            if (formMessage) {
+              formMessage.style.display = "block";
+              formMessage.style.backgroundColor = "#f8d7da";
+              formMessage.style.color = "#721c24";
+              formMessage.style.border = "1px solid #f5c6cb";
+              formMessage.textContent = "Sorry, there was an error sending your message. Please try again.";
+            }
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Submit";
+            }
+            openCrispChat();
+            console.error("EmailJS error:", err);
+          });
+        } else {
+          if (formMessage) {
+            formMessage.style.display = "block";
+            formMessage.style.backgroundColor = "#d4edda";
+            formMessage.style.color = "#155724";
+            formMessage.style.border = "1px solid #c3e6cb";
+            formMessage.textContent = "Thank you! Your message has been received. Our team will reach out shortly.";
+          }
+          form.reset();
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit";
+          }
+          openCrispChat();
+        }
       });
     }
     const btn = document.getElementById("scrollToTopBtn");
