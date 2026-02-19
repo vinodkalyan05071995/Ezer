@@ -19,7 +19,7 @@
     <script>
 (function() {
     var region = localStorage.getItem('ezer_region');
-    if (region === 'AU' || region === 'US') {
+    if (region === 'CA' || region === 'US') {
         location.replace('/' + region.toLowerCase() + '/');
         return;
     }
@@ -27,7 +27,7 @@
         .then(function(r) { return r.json(); })
         .then(function(d) {
             var code = (d && d.countryCode) || '';
-            region = (code === 'AU') ? 'au' : 'us';
+            region = (code === 'CA') ? 'ca' : 'us';
             localStorage.setItem('ezer_region', region.toUpperCase());
             location.replace('/' + region + '/');
         })

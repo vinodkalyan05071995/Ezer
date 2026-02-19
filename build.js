@@ -27,7 +27,7 @@ function copyDir(src, dest) {
     }
 }
 
-// Transform HTML for subfolder deployment (us/ or au/)
+// Transform HTML for subfolder deployment (us/ or ca/)
 function transformHtmlForRegion(html, region) {
     let out = html
         .replace(/href="\/"/g, 'href="index.html"')
@@ -45,15 +45,15 @@ function transformHtmlForRegion(html, region) {
     const switcher = `
         <script>
         (function(){
-            var path=(location.pathname.replace(/^\\/(us|au)\\/?/,'')||'index.html').replace(/^\\//,'');
+            var path=(location.pathname.replace(/^\\/(us|ca)\\/?/,'')||'index.html').replace(/^\\//,'');
             var region=document.documentElement.getAttribute('data-region')||'US';
             var urlUS='/us/'+path;
-            var urlAU='/au/'+path;
+            var urlCA='/ca/'+path;
             var labelUS='United States';
-            var labelAU='Australia';
-            var currentLabel=region==='US'?labelUS:labelAU;
+            var labelCA='Canada';
+            var currentLabel=region==='US'?labelUS:labelCA;
             var svg='<svg width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg"><polyline points="2,4 7,9 12,4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
-            var html='<li class="m-0 p-0 ms-lg-3 dropdown dropdown-locale"><button class="dropdown-btn btn-transparent menu-link link d-flex align-items-center" type="button" id="localeDropdown" data-bs-toggle="dropdown" aria-expanded="false"><span class="locale-current">'+currentLabel+'</span><span class="dropdown-btn-icon ms-1 d-flex align-items-center">'+svg+'</span></button><ul class="dropdown-menu reach-dropdown-menu dropdown-menu-locale" aria-labelledby="localeDropdown"><li><a class="dropdown-item" href="'+urlUS+'">'+labelUS+'</a></li><li><a class="dropdown-item" href="'+urlAU+'">'+labelAU+'</a></li></ul></li>';
+            var html='<li class="m-0 p-0 ms-lg-3 dropdown dropdown-locale"><button class="dropdown-btn btn-transparent menu-link link d-flex align-items-center" type="button" id="localeDropdown" data-bs-toggle="dropdown" aria-expanded="false"><span class="locale-current">'+currentLabel+'</span><span class="dropdown-btn-icon ms-1 d-flex align-items-center">'+svg+'</span></button><ul class="dropdown-menu reach-dropdown-menu dropdown-menu-locale" aria-labelledby="localeDropdown"><li><a class="dropdown-item" href="'+urlUS+'">'+labelUS+'</a></li><li><a class="dropdown-item" href="'+urlCA+'">'+labelCA+'</a></li></ul></li>';
             var el=document.querySelector('.menu-list');
             if(el){el.insertAdjacentHTML('beforeend',html);}
         })();
@@ -107,28 +107,28 @@ function transformHtmlForRegion(html, region) {
         // Copy static files to dist
         console.log('📦 Copying static files to dist...');
 
-        // Create us/ and au/ subfolders with transformed HTML
+        // Create us/ and ca/ subfolders with transformed HTML
         const otherHtmlFiles = ['blogs.html', 'chatbot.html', 'faq.html', 'insights.html', 'reach.html', 'dms-management.html', 'website-management.html', 'photo-studio-360.html'];
         const regionSources = {
-            index: { us: 'index-us.html', au: 'index-au.html' },
-            pricing: { us: 'pricing-us.html', au: 'pricing-au.html' }
+            index: { us: 'index-us.html', ca: 'index-ca.html' },
+            pricing: { us: 'pricing-us.html', ca: 'pricing-ca.html' }
         };
-        ['us', 'au'].forEach(region => {
+        ['us', 'ca'].forEach(region => {
             const regionDir = join(__dirname, 'dist', region);
             if (!existsSync(regionDir)) mkdirSync(regionDir, { recursive: true });
-            // Index: use index-us.html for us/, index-au.html for au/
+            // Index: use index-us.html for us/, index-ca.html for ca/
             const indexSrc = join(__dirname, regionSources.index[region]);
             if (existsSync(indexSrc)) {
                 const content = readFileSync(indexSrc, 'utf8');
-                const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'AU');
+                const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'CA');
                 writeFileSync(join(regionDir, 'index.html'), transformed);
                 console.log(`  ✓ ${region}/index.html (from ${regionSources.index[region]})`);
             }
-            // Pricing: use pricing-us.html for us/, pricing-au.html for au/
+            // Pricing: use pricing-us.html for us/, pricing-ca.html for ca/
             const pricingSrc = join(__dirname, regionSources.pricing[region]);
             if (existsSync(pricingSrc)) {
                 const content = readFileSync(pricingSrc, 'utf8');
-                const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'AU');
+                const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'CA');
                 writeFileSync(join(regionDir, 'pricing.html'), transformed);
                 console.log(`  ✓ ${region}/pricing.html (from ${regionSources.pricing[region]})`);
             }
@@ -138,7 +138,7 @@ function transformHtmlForRegion(html, region) {
                 const dest = join(regionDir, file);
                 if (existsSync(src)) {
                     const content = readFileSync(src, 'utf8');
-                    const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'AU');
+                    const transformed = transformHtmlForRegion(content, region === 'us' ? 'US' : 'CA');
                     writeFileSync(dest, transformed);
                     console.log(`  ✓ ${region}/${file}`);
                 }
@@ -149,7 +149,7 @@ function transformHtmlForRegion(html, region) {
         copyFileSync(join(__dirname, 'index-redirect.html'), join(__dirname, 'dist', 'index.html'));
         console.log('  ✓ index.html (redirect)');
 
-        // Netlify redirects for /us and /au
+        // Netlify redirects for /us and /ca
         if (existsSync(join(__dirname, '_redirects'))) {
             copyFileSync(join(__dirname, '_redirects'), join(__dirname, 'dist', '_redirects'));
             console.log('  ✓ _redirects');
