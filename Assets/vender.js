@@ -1,3 +1,2 @@
-var App = (() => {
-})();
+var App=(()=>{})();
 //# sourceMappingURL=vender.js.map

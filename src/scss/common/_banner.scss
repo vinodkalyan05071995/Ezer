@@ -187,141 +187,44 @@
 
     &_container {
         position: relative;
-        border-radius: 28px;
         overflow: hidden;
         min-height: 520px;
-        display: flex;
-        align-items: stretch;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "content" "visual";
 
         @media (min-width: 992px) {
             min-height: 560px;
-        }
-    }
-
-    &_background {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1.02);
-            transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg,
-                    rgba(15, 23, 42, 0.92) 0%,
-                    rgba(26, 26, 26, 0.75) 35%,
-                    rgba(30, 41, 59, 0.25) 70%,
-                    rgba(37, 99, 235, 0.12) 100%);
-        }
-    }
-
-    &:hover &_background img {
-        transform: scale(1.06);
-    }
-
-    // Decorative floating shapes
-    &_shapes {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        pointer-events: none;
-        overflow: hidden;
-    }
-
-    &_shape {
-        position: absolute;
-        border: 1px solid rgba(37, 99, 235, 0.25);
-        border-radius: 50%;
-
-        &--1 {
-            width: 320px;
-            height: 320px;
-            top: -120px;
-            right: -80px;
-            animation: banner-v2-float 12s ease-in-out infinite;
-        }
-
-        &--2 {
-            width: 180px;
-            height: 180px;
-            bottom: -60px;
-            left: 10%;
-            animation: banner-v2-float 10s ease-in-out infinite 1.5s;
-        }
-
-        &--3 {
-            width: 80px;
-            height: 80px;
-            top: 40%;
-            right: 15%;
-            opacity: 0.6;
-            animation: banner-v2-float 8s ease-in-out infinite 0.5s;
-        }
-
-        &--line {
-            position: absolute;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.4), transparent);
-            width: 40%;
-            bottom: 25%;
-            left: 0;
-            transform-origin: left;
-            transform: rotate(-15deg);
-        }
-    }
-
-    @keyframes banner-v2-float {
-
-        0%,
-        100% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(8px, -8px) scale(1.02);
-        }
-    }
-
-    &_inner {
-        position: relative;
-        z-index: 3;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 48px 24px 48px;
-        align-items: center;
-        width: 100%;
-
-        @media (min-width: 992px) {
-            grid-template-columns: 1.1fr 0.9fr;
-            padding: 64px 56px 64px 64px;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "content visual";
         }
     }
 
     &_content {
-        max-width: 580px;
+        grid-area: content;
+        padding: 48px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (min-width: 992px) {
+            padding: 64px 48px 64px 64px;
+        }
     }
 
     &_badge {
         display: inline-flex;
         align-items: center;
         gap: 8px;
+        width: fit-content;
         padding: 8px 16px;
         background: rgba(37, 99, 235, 0.18);
         border: 1px solid rgba(37, 99, 235, 0.45);
         border-radius: 100px;
-        color: var(--color-secondary);
+        color: var(--color-black);
         font-family: var(--font-family);
-        font-size: 12px;
+        font-size: 17px;
         font-weight: 600;
         letter-spacing: 0.14em;
         text-transform: uppercase;
@@ -334,7 +237,7 @@
         font-weight: 600;
         line-height: 1.15;
         letter-spacing: 0.04em;
-        color: var(--color-white);
+        color: var(--color-black);
         margin-bottom: 20px;
 
         .banner-v2_highlight {
@@ -357,7 +260,7 @@
     }
 
     &_description {
-        color: rgba(255, 255, 255, 0.88);
+        color: var(--color-gray);
         font-family: var(--font-family);
         font-size: 17px;
         line-height: 1.65;
@@ -392,50 +295,33 @@
 
             &:hover {
                 background: transparent;
-                color: #fff;
-                border-color: #fff;
-                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+                color: var(--color-secondary);
+                border-color: var(--color-secondary);
+                box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
                 transform: translateY(-2px);
             }
         }
 
         &--ghost {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--color-white);
-            border: 2px solid rgba(255, 255, 255, 0.35);
+            background: transparent;
+            color: var(--color-black);
+            border: 2px solid var(--color-border);
 
             &:hover {
-                background: rgba(255, 255, 255, 0.14);
-                border-color: rgba(255, 255, 255, 0.5);
+                background: var(--color-light-gray);
+                border-color: var(--color-metal-400);
                 transform: translateY(-2px);
             }
         }
     }
 
-    // Right side: image card with clip-path
+    // Right side: background image
     &_visual {
+        grid-area: visual;
         position: relative;
-        display: none;
-
-        @media (min-width: 992px) {
-            display: block;
-        }
-    }
-
-    &_visual-frame {
-        position: relative;
-        border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 24px 56px rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(37, 99, 235, 0.2);
-
-        &::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(26, 26, 26, 0.4) 100%);
-            z-index: 1;
-        }
+        min-height: 280px;
+        border-radius: 24px;
 
         img {
             width: 100%;
@@ -453,12 +339,12 @@
         gap: 24px 32px;
         margin-top: 28px;
         padding-top: 24px;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        border-top: 1px solid var(--color-border);
     }
 
     &_strip-item {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 13px;
+        color: var(--color-gray);
+        font-size: 16px;
         letter-spacing: 0.06em;
         font-weight: 500;
 
