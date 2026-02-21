@@ -309,23 +309,31 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+Y4eQX1oaMp4fR+421jGkf+42v"
             crossorigin="anonymous"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                document.querySelectorAll('#pricingTabs [data-bs-toggle="tab"]').forEach(function(tab) {
-                    tab.addEventListener('click', function(e) {
-                        var targetId = this.getAttribute('href') || this.getAttribute('data-bs-target');
-                        if (targetId && targetId.startsWith('#')) {
-                            var pane = document.querySelector(targetId);
-                            if (pane) {
-                                document.querySelectorAll('#pricingTabsContent .tab-pane').forEach(function(p) { p.classList.remove('show', 'active'); });
-                                document.querySelectorAll('#pricingTabs .nav-link').forEach(function(t) { t.classList.remove('active'); });
-                                pane.classList.add('show', 'active');
-                                this.classList.add('active');
-                                e.preventDefault();
-                            }
-                        }
+            (function initPricingTabs() {
+                function switchTab(triggerEl) {
+                    var targetId = triggerEl.getAttribute('href') || triggerEl.getAttribute('data-bs-target');
+                    if (!targetId || !targetId.startsWith('#')) return;
+                    var pane = document.querySelector(targetId);
+                    if (!pane) return;
+                    document.querySelectorAll('#pricingTabsContent .tab-pane').forEach(function(p) { p.classList.remove('show', 'active'); });
+                    document.querySelectorAll('#pricingTabs .nav-link').forEach(function(t) { t.classList.remove('active'); });
+                    pane.classList.add('show', 'active');
+                    triggerEl.classList.add('active');
+                }
+                document.addEventListener('DOMContentLoaded', function() {
+                    var tabs = document.querySelectorAll('#pricingTabs [data-bs-toggle="tab"]');
+                    if (tabs.length === 0) return;
+                    tabs.forEach(function(tab) {
+                        tab.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            switchTab(this);
+                        });
                     });
+                    if (typeof bootstrap !== 'undefined') {
+                        tabs.forEach(function(triggerEl) { new bootstrap.Tab(triggerEl); });
+                    }
                 });
-            });
+            })();
         </script>
         <script src="Assets/base.js"></script>
     </body>

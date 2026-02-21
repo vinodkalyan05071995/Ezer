@@ -129,7 +129,15 @@
 }
 
 .pricing-tab-content {
-    padding-top: 32px;
+    margin-top: 32px;
+}
+
+.pricing-tab-content .tab-pane {
+    display: none;
+}
+
+.pricing-tab-content .tab-pane.show.active {
+    display: block;
 }
 
 // ─── Bundles ─────────────────────────────────────────────────────────────────
