@@ -30,10 +30,10 @@
   <line x1="360" y1="0" x2="360" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
   <line x1="480" y1="0" x2="480" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
 
-  <!-- Central hub: Ezer -->
+  <!-- Central hub: Ezers -->
   <circle cx="300" cy="200" r="50" fill="rgba(37,99,235,0.15)" stroke="#2563EB" stroke-width="2"/>
   <circle cx="300" cy="200" r="36" fill="url(#dr-blue)" filter="url(#dr-glow)"/>
-  <text x="300" y="196" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="white">EZER</text>
+  <text x="300" y="196" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="white">Ezers</text>
   <text x="300" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="400" fill="rgba(255,255,255,0.8)">Sync Engine</text>
 
   <!-- Node 1: Website (top-left) -->

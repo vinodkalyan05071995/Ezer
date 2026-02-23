@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting — Ezer</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Redirecting — Ezers</title>
+        <style>
         body { font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f5f5f5; }
         .msg { text-align: center; color: #333; }
         .spinner { width: 40px; height: 40px; border: 3px solid #ddd; border-top-color: #D4AF37; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
         @keyframes spin { to { transform: rotate(360deg); } }
     </style>
-</head>
-<body>
-    <div class="msg">
-        <div class="spinner"></div>
-        <p>Redirecting to your region...</p>
-    </div>
-    <script>
+    </head>
+    <body>
+        <div class="msg">
+            <div class="spinner"></div>
+            <p>Redirecting to your region...</p>
+        </div>
+        <script>
 (function() {
-    var region = localStorage.getItem('ezer_region');
+    var region = localStorage.getItem('Ezers_region');
     if (region === 'CA' || region === 'US') {
         location.replace('/' + region.toLowerCase() + '/');
         return;
@@ -28,14 +28,14 @@
         .then(function(d) {
             var code = (d && d.countryCode) || '';
             region = (code === 'CA') ? 'ca' : 'us';
-            localStorage.setItem('ezer_region', region.toUpperCase());
+            localStorage.setItem('Ezers_region', region.toUpperCase());
             location.replace('/' + region + '/');
         })
         .catch(function() {
-            localStorage.setItem('ezer_region', 'US');
+            localStorage.setItem('Ezers_region', 'US');
             location.replace('/us/');
         });
 })();
     </script>
-</body>
+    </body>
 </html>
