@@ -1,13 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
   <defs>
-    <linearGradient id="dr-bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="100%" stop-color="#e2e8f0"/>
-    </linearGradient>
-    <linearGradient id="dr-blue" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2563EB"/>
-      <stop offset="100%" stop-color="#3b82f6"/>
-    </linearGradient>
     <linearGradient id="hero-bg" x1="0" y1="0" x2="600" y2="200" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#1e3a5f"/>
       <stop offset="100%" stop-color="#2563EB"/>
@@ -54,24 +46,24 @@
   <!-- Search filters row -->
   <rect x="30" y="96" width="72" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
   <text x="42" y="108" font-family="system-ui,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.8)">Condition</text>
-  <text x="92" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">▾</text>
+  <text x="92" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">&#9662;</text>
 
   <rect x="108" y="96" width="60" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
   <text x="120" y="108" font-family="system-ui,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.8)">Make</text>
-  <text x="158" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">▾</text>
+  <text x="158" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">&#9662;</text>
 
   <rect x="174" y="96" width="60" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
   <text x="186" y="108" font-family="system-ui,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.8)">Model</text>
-  <text x="224" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">▾</text>
+  <text x="224" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">&#9662;</text>
 
   <rect x="240" y="96" width="60" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
   <text x="252" y="108" font-family="system-ui,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.8)">Min Year</text>
-  <text x="290" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">▾</text>
+  <text x="290" y="108" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.5)">&#9662;</text>
 
   <rect x="306" y="96" width="60" height="18" rx="4" fill="#2563EB" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
   <text x="322" y="108" font-family="system-ui,sans-serif" font-size="7" font-weight="600" fill="white">Search</text>
 
-  <text x="30" y="128" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.6)">Advanced Search →</text>
+  <text x="30" y="128" font-family="system-ui,sans-serif" font-size="7" fill="rgba(255,255,255,0.6)">Advanced Search &#8594;</text>
 
   <!-- Car illustration in hero -->
   <g transform="translate(420, 72)">
@@ -92,28 +84,22 @@
   <!-- Featured Inventory section -->
   <rect x="0" y="174" width="600" height="14" fill="#ffffff"/>
   <text x="30" y="184" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#1e293b">Featured Inventory</text>
-  <text x="530" y="184" font-family="system-ui,sans-serif" font-size="7" fill="#2563EB">View All →</text>
+  <text x="530" y="184" font-family="system-ui,sans-serif" font-size="7" fill="#2563EB">View All &#8594;</text>
 
   <!-- Car card 1 -->
   <rect x="30" y="192" width="168" height="118" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5" filter="url(#card-shadow)"/>
-  <!-- Car image placeholder -->
   <rect x="30" y="192" width="168" height="52" rx="8" fill="#f1f5f9"/>
   <rect x="30" y="236" width="168" height="8" fill="#f1f5f9"/>
-  <!-- Simple car silhouette -->
   <g transform="translate(75, 200)">
     <path d="M10 32 L20 14 L55 10 L70 18 L78 18 L78 32 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.5"/>
     <circle cx="26" cy="34" r="5" fill="#94a3b8"/>
     <circle cx="64" cy="34" r="5" fill="#94a3b8"/>
   </g>
-  <!-- Certified badge -->
   <rect x="36" y="198" width="36" height="11" rx="3" fill="#10b981"/>
   <text x="54" y="206" text-anchor="middle" font-family="system-ui,sans-serif" font-size="5.5" font-weight="600" fill="white">Certified</text>
-  <!-- Car info -->
   <text x="38" y="256" font-family="system-ui,sans-serif" font-size="7" font-weight="600" fill="#1e293b">2019 Placeholder Title</text>
   <text x="38" y="267" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#2563EB">$24,995</text>
-  <!-- Details -->
   <text x="38" y="278" font-family="system-ui,sans-serif" font-size="5.5" fill="#94a3b8">Automatic · 42,000 mi · Gas</text>
-  <!-- Button -->
   <rect x="38" y="284" width="68" height="16" rx="4" fill="#2563EB"/>
   <text x="72" y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="6.5" font-weight="600" fill="white">View Details</text>
 
@@ -171,10 +157,9 @@
   <!-- Feature 1: Quality -->
   <rect x="42" y="372" width="150" height="22" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5" filter="url(#card-shadow)"/>
   <circle cx="58" cy="383" r="7" fill="#eff6ff"/>
-  <path d="M55 383 L57 381 L61 385 L65 377 L67 379 L61 387 Z" fill="#2563EB" transform="scale(0.6) translate(35, 280)"/>
-  <text x="56" y="385" text-anchor="middle" font-family="system-ui,sans-serif" font-size="6" fill="#2563EB">✓</text>
+  <text x="58" y="386" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#2563EB">&#10003;</text>
   <text x="72" y="381" font-family="system-ui,sans-serif" font-size="6" font-weight="600" fill="#1e293b">Quality Vehicles</text>
-  <text x="72" y="389" font-family="system-ui,sans-serif" font-size="5" fill="#94a3b8">Inspected & certified</text>
+  <text x="72" y="389" font-family="system-ui,sans-serif" font-size="5" fill="#94a3b8">Inspected &amp; certified</text>
 
   <!-- Feature 2: Financing -->
   <rect x="225" y="372" width="150" height="22" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5" filter="url(#card-shadow)"/>
@@ -186,7 +171,7 @@
   <!-- Feature 3: Top Rated -->
   <rect x="408" y="372" width="150" height="22" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5" filter="url(#card-shadow)"/>
   <circle cx="424" cy="383" r="7" fill="#eff6ff"/>
-  <text x="424" y="386" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#f59e0b">★</text>
+  <text x="424" y="386" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7" fill="#f59e0b">&#9733;</text>
   <text x="438" y="381" font-family="system-ui,sans-serif" font-size="6" font-weight="600" fill="#1e293b">Top Rated Dealership</text>
   <text x="438" y="389" font-family="system-ui,sans-serif" font-size="5" fill="#94a3b8">5-star customer reviews</text>
 </svg>
