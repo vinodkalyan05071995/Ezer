@@ -65,10 +65,8 @@ function transformHtmlForRegion(html, region) {
 
 (async () => {
     const entryPoints = [
-        'src/js/*.js',
         'src/**/base.js',
-        'src/**/base.scss',
-        'src/**/sections/*.scss'
+        'src/**/base.scss'
     ];
 
     const isBuild = process.argv.includes('--build');

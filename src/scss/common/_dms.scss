@@ -467,6 +467,12 @@
     }
 }
 
+// Sticky image column for section layouts
+.dms-section-img-wrap {
+    position: sticky;
+    top: 52px;
+}
+
 // Feature blocks — alternating layout with creative treatment
 .dms-features {
     padding: 64px 0;
