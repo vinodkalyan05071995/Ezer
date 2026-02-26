@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Redirecting — Ezers</title>
+        <title>Redirecting — Ezerz</title>
         <style>
         body { font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f5f5f5; }
         .msg { text-align: center; color: #333; }
@@ -18,7 +18,7 @@
         </div>
         <script>
 (function() {
-    var region = localStorage.getItem('Ezers_region');
+    var region = localStorage.getItem('Ezerz_region');
     if (region === 'CA' || region === 'US') {
         location.replace('/' + region.toLowerCase() + '/');
         return;
@@ -28,11 +28,11 @@
         .then(function(d) {
             var code = (d && d.countryCode) || '';
             region = (code === 'CA') ? 'ca' : 'us';
-            localStorage.setItem('Ezers_region', region.toUpperCase());
+            localStorage.setItem('Ezerz_region', region.toUpperCase());
             location.replace('/' + region + '/');
         })
         .catch(function() {
-            localStorage.setItem('Ezers_region', 'US');
+            localStorage.setItem('Ezerz_region', 'US');
             location.replace('/us/');
         });
 })();
