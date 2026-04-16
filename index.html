@@ -20,6 +20,7 @@
             href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="Assets/base.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     </head>
 
@@ -631,9 +632,7 @@
                 <div class="container">
                     <div class="contact_wrapper">
                         <div class="contact_map">
-                            <iframe class="contact_map-iframe"
-                                src="https://maps.google.com/maps?q=53.3381768,-6.2613077&z=15&output=embed"
-                                title="Map"></iframe>
+                            <div id="contact-map" class="contact_map-iframe"></div>
                             <span class="contact_map-accent"></span>
                         </div>
                         <div class="contact_content">
@@ -781,6 +780,18 @@
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="Assets/base.js"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+            (function () {
+                var map = L.map('contact-map', { zoomControl: true, scrollWheelZoom: false }).setView([50, -100], 3);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    maxZoom: 18
+                }).addTo(map);
+                L.marker([39.8283, -98.5795]).addTo(map).bindPopup('<b>United States</b>').openPopup();
+                L.marker([56.1304, -106.3468]).addTo(map).bindPopup('<b>Canada</b>');
+            })();
+        </script>
         <script
             type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3d4b2e0b-225e-43af-8412-66d82cf45cc6";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     </body>
